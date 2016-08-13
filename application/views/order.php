@@ -2,6 +2,9 @@
 <script src="<?=base_url('assets/js/jquery.validate.js')?>" type="text/javascript"></script>
 <script src="<?=base_url('assets/js/jquery.form.js')?>" type="text/javascript"></script>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
 <!--Jquery datepicker-->
 <link rel="stylesheet" type="text/css" href="<?=base_url('assets/css/jquery.ui.datepicker.css')?>" />
 <script src="<?=base_url('assets/js/jquery.ui.datepicker.js')?>" type="text/javascript"></script>
@@ -9,41 +12,10 @@
 
     $(document).ready(function() {
 
-        $('.datepicker').datepicker();
-
-        //Contact form
-        $(function() {
-            var v = $("#orderform").validate({
-                submitHandler: function(form) {
-                    $(form).ajaxSubmit({
-                        target: "#result",
-                        beforeSubmit: function() {
-                            $('#order-loader').show();
-                            $('#order-button').val('Please wait').attr('disabled','disabled');
-                        },
-                        error: function() {
-                            $('#order-button').val('Send message').removeAttr('disabled');
-                            $('#order-loader').hide();
-                        },
-                        complete: function() {
-                            $('#order-button').val('Send message').removeAttr('disabled');
-                            $('#order-loader').hide();
-                        },
-                        success: function(data) {
-                            if(data == 'success') {
-                                //document.location.href = window.location.pathname;
-                                $('#result').html('<strong class="success">Pesan telah berhasil dikirim. Terima Kasih!</strong>');
-                                $('#orderform')[0].reset();
-                                $('#orderform').slideUp('fast');
-                            }
-                        },
-                        clearForm: false
-                    });
-                }
-            });
-        });
-        //To clear message field on page refresh (you may clear other fields too, just give the 'id to input field' in html and mention it here, as below)
-        $('#orderform #message').val('');
+        $('.datepicker').datepicker({ changeMonth: true,
+            changeYear: true,
+            yearRange: "1950:2020"});
+        $('.js-select2').select2();
     });
 
 </script>
@@ -132,60 +104,85 @@
 
             <!--main content starts-->
             <div class="main-content span8">
+                <?=$this->session->flashdata('pesan')?>
                 <div class="inner-content">Silahkan isi form pemesanan di bawah ini dengan benar, agar kami dapat membantu <hr /></div>
-
                 <div class="clearfix"></div>
                 <div id="result"></div>
 
-                <form action="http://aqiqahnurulhayat.com/order/send" method="post" accept-charset="utf-8" id="orderform">          <fieldset>
+                <form action="<?=site_url('order/send')?>" method="post" accept-charset="utf-8">
+                    <fieldset>
                         <p style="border-bottom:1px solid #e2e2e2;"><strong>Data Pemesanan</strong></p>
                         <p>
                             <label>Nama Lengkap :</label>
-                            <input name="name" class="required"  type="text" />
+                            <input name="name" class="required" type="text" required />
                         </p>
                         <p>
+                            <label>Kota :</label>
+                            <select id="kota" name="kota" class="js-select2">
+                                <option value="">Pilih Kota</option>
+                                <?php foreach($kota->result() as $city) {?>
+                                    <option value="<?=$city->id?>"><?=$city->name?></option>
+                                <?php } ?>
+                            </select>
+                        </p>
+                        <br>
+                        <p>
+                            <label>Kecamatan :</label>
+                            <select id="kec" name="kec" class="js-select2">
+                                <option value="">Pilih Kecamatan</option>
+                            </select>
+                        </p>
+                        <br>
+                        <p>
+                            <label>Kelurahan :</label>
+                            <select id="kel" name="kel" class="js-select2">
+                                <option value="">Pilih Kelurahan</option>
+                            </select>
+                        </p>
+                        <br>
+                        <p>
                             <label>Alamat :</label>
-                            <textarea  rows="4" name="address" id="address" class="required"></textarea>
+                            <textarea  rows="4" name="address" id="address" class="required" required></textarea>
                         </p>
                         <p>
                             <label>Nomor Telepon :</label>
-                            <input name="phone" class="number" type="text" />
+                            <input name="phone" class="number" type="text"/>
                         </p>
                         <p>
                             <label>Nomor HP :</label>
-                            <input name="mobile" class="number" type="text" />
+                            <input name="mobile" class="number" type="text" required/>
                         </p>
                         <p>
                             <label>Email :</label>
-                            <input name="email"  class="required email" type="text" />
+                            <input name="email"  class="required email" type="text" required/>
                         </p>
 
                         <p style="margin-top:10px;border-bottom:1px solid #e2e2e2;"><strong>Data Yang Akan Di Aqiqoh</strong></p>
 
                         <p>
                             <label>Nama :</label>
-                            <input name="child" class="required" type="text" />
+                            <input name="child" class="required" type="text" required/>
                         </p>
                         <p>
                             <label>Bin/Binti :</label>
-                            <input name="parent" class="required" type="text" />
+                            <input name="parent" class="required" type="text" required/>
                         </p>
                         <p>
                             <label>Tempat Lahir :</label>
-                            <input name="birth_place" class="required" type="text" />
+                            <input name="birth_place" class="required" type="text" required/>
                         </p>
                         <p>
                             <label>Tanggal Lahir :</label>
-                            <input name="birth_date" class="required datepicker" type="text" readonly="readonly" style="cursor:default;" />
+                            <input name="birth_date" class="required datepicker" type="text" readonly="readonly" style="cursor:default;" required/>
                         </p>
                         <p>
                             <label>Jenis Kelamin :</label>
               <span class="detail-form">
                 <span>
-                  <input type="radio" name="gender" value="Laki-laki" id="L" checked="checked" /><label for="L">Laki laki</label>
+                  <input type="radio" name="gender" value="Laki-laki" id="L" checked="checked"/><label for="L">Laki laki</label>
                 </span>
                 <span>
-                  <input type="radio" name="gender" value="Perempuan" id="P" /><label for="P">Perempuan</label>
+                  <input type="radio" name="gender" value="Perempuan" id="P"/><label for="P">Perempuan</label>
                 </span>
               </span>
                         <div class="clear"></div>
@@ -197,31 +194,26 @@
 
                         <p>
                             <label>Hari :</label>
-                            <input name="shipping_day" class="required" type="text" />
+                            <input name="shipping_day" class="required" type="text" required/>
                         </p>
                         <p>
                             <label>Tanggal :</label>
-                            <input name="shipping_date" class="required datepicker" type="text" readonly="readonly" style="cursor:default;" />
+                            <input name="shipping_date" class="required datepicker" type="text" readonly="readonly" style="cursor:default;" required/>
                         </p>
                         <p>
                             <label>Jam :</label>
-                            <input name="shipping_time" class="required" type="text" maxlength="5" />
+                            <input name="shipping_time" class="required" type="time" required/>
                         </p>
                         <p>
                             <label>Alamat :</label>
-                            <textarea  rows="4" name="shipping_address" id="shipping_address" class="required"></textarea>
+                            <textarea  rows="4" name="shipping_address" id="shipping_address" class="required" required></textarea>
                         </p>
-
-
-
-
                         <p>
-                            <label>Aqiqoh :</label>
-                            <select name="aqiqoh" class="required">
+                            <label>Aqiqah :</label>
+                            <select name="aqiqah" class="required" required>
                                 <option value="">-pilih aqiqoh-</option>
-                                <option value="aqiqoh peduli dan berbagi untuk yatim dan desa miskin">Aqiqoh Peduli & Berbagi untuk yatim dan desa miskin</option>
+                                <option value="Program pemberdayaan anak yatim / dhuafa LMI">Program pemberdayaan anak yatim / dhuafa LMI</option>
                                 <option value="pribadi">Pribadi</option>
-                                <option value="tasyakuran">Tasyakuran</option>
                             </select>
                         </p>
 
@@ -230,23 +222,23 @@
               <span class="detail-form">
 
                 <span>
-                  <label>Platinum :</label><input name="istimewa" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
+                  <label>Sedap 4 :</label><input name="sedap_4" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
                 </span>
 
                 <span>
-                  <label>Istimewa :</label><input name="super" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
+                  <label>Sedap 3 :</label><input name="sedap_3" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
                 </span>
 
                 <span>
-                  <label>Super :</label><input name="puas" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
+                  <label>Sedap 2 :</label><input name="sedap_2" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
                 </span>
 
                 <span>
-                  <label>Puas :</label><input name="hemat" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
+                  <label>Sedap 1 :</label><input name="sedap_1" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
                 </span>
 
                 <span>
-                  <label>Tasyakuran :</label><input name="tasyakuran" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
+                  <label>Syukur :</label><input name="syukur" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
                 </span>
 
               </span>
@@ -352,14 +344,6 @@
                         <p class="clear"></p>
 
                         <p>
-                            <label></label>
-                            <img src="http://aqiqahnurulhayat.com/captcha/1469669951.jpg" width=" 250" height="100" style="border:0;" alt=" " />            </p>
-                        <p>
-                            <label>Kode Captcha :</label>
-                            <input name="captcha" class="required" type="text">
-                        </p>
-
-                        <p>
                             <input type="submit" value="Order" class="submit" id="order-button" />
                             <input type="button" class="preloader" id="order-loader" />
                         </p>
@@ -378,7 +362,7 @@
                             <h4 class="widget-title">Brosur</h4>
                             <ul>
                                 <li>
-                                    <a href="#" title="Download Brosur Brosur_Aqiqah_NH">
+                                    <a href="<?=base_url('upload/share/brosur-harga-aqiqah-sehati.jpg')?>" target="_blank" title="Download Brosur Brosur_AqiqahSehati">
                                         <div class="brochure-list">Brosur_AqiqahSehati</div>
                                     </a>
                                 </li>
@@ -397,6 +381,45 @@
         </div>
     </div>
 </section>
+
+<input type="hidden" id="urlkec" value="<?=site_url('order/getkec')?>">
+<input type="hidden" id="urlkel" value="<?=site_url('order/getkel')?>">
+
+<script>
+    $('#kota').change(function(){
+        var id = this.value;
+        var url = $('#urlkec').val();
+        console.log(id);
+
+        $.ajax({
+            url : url+'/'+id,
+            type: 'get',
+            cache: false,
+        })
+            .success(function(response){
+                /*optional stuff to do after success */
+                $('#kec').html(response);
+            });
+    });
+
+    $('#kec').change(function(){
+        var id = this.value;
+        var url = $('#urlkel').val();
+        console.log(id);
+
+        $.ajax({
+            url : url+'/'+id,
+            type: 'get',
+            cache: false,
+        })
+            .success(function(response){
+                /*optional stuff to do after success */
+                $('#kel').html(response);
+            });
+    });
+
+</script>
+
 <!-- content ends-->
 <style type="text/css">
     .timeline-box {

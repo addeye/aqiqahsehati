@@ -6,18 +6,16 @@
 
 <html class="not-ie" lang="en">
 <head>
+    <meta name="google-site-verification" content="WN6yU1saiFsRdwgY5M4dOKcnadvGxTrJ7Flgbjbws7w" />
     <meta charset="utf-8">
-    <meta name="description" content=" Aqiqah, Aqiqoh atau Akikah terbesar di Indonesia persembahan Aqiqah Nurul Hayat " />
-    <meta name="keywords" content="aqiqah surabaya,	aqiqah bangkalan, aqiqah Sidoarjo, aqiqah malang, aqiqah gresik, aqiqah kediri, aqiqah madiun, aqiqah tuban, aqiqah bojonegoro, aqiqah lamongan, aqiqah jember, aqiqah banyuwangi, aqiqah pasuruan, aqiqah semarang, aqiqah jakarta barat, aqiqah jakarta timur, aqiqah jakarta utara, aqiqah jakarta selatan, aqiqah jakarta pusat, aqiqah depok, aqiqah bogor, aqiqah bekasi, aqiqah bekasi, aqiqah tangsel, aqiqah tangerang, aqiqah tangerang selatan, aqiqah medan, aqiqah makassar, aqiqah balikpapan, aqiqah banjarmasin
-	"/>
+    <meta name="description" content=" Aqiqah, Aqiqoh atau Akikah Paling berkualitas Persembahan Aqiqah Sehati" />
+    <meta name="keywords" content="aqiqah surabaya, aqiqah murah surabaya, aqiqah sidoarjo, aqiqah berkualitas, aqiqah mediun, aqiqah jawa timur, aqiqah, aqiqah sehati, aqiqah halal, aqiqah kota surabaya, pesan aqiqah, pesan aqiqah murah surabaya, aqiqah kambing, aqiqah kambing murah, aqiqah kambing murah surabaya"/>
     <meta name="author" content="Aqiqah Sehati" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <title>aqiqah, aqiqoh, akikah, nomor 1 Indonesia by Aqiqah Sehati - Home</title>
+    <title>aqiqah, aqiqoh, akikah, Berkualitas by Aqiqah Sehati - Home</title>
     <!--Fav and touch icons-->
     <link rel="shortcut icon" href="<?=base_url('assets/images/icons/favicon.ico')?>">
     <link rel="apple-touch-icon" href="<?=base_url('assets/images/icons/apple-touch-icon.png')?>">
-    <!-- <link rel="apple-touch-icon" sizes="72x72" href="http://aqiqahnurulhayat.com/assets/images/icons/apple-touch-icon-72x72.html">
-    <link rel="apple-touch-icon" sizes="114x114" href="http://aqiqahnurulhayat.com/assets/images/icons/apple-touch-icon-114x114.html"> -->
 
     <!--google web font-->
 

@@ -140,6 +140,13 @@ html[xmlns] .slides {
     opacity: 1;
     cursor: default;
 }
+
+div .flex-caption{
+    background: rgba(254, 254, 254, 0.3);
+    padding: 11px;
+    text-align: center
+}
+
 @media screen and (max-width: 860px) {
     .flex-direction-nav .flex-prev {
         opacity: 1;
@@ -204,7 +211,7 @@ html[xmlns] .slides {
 #slider-bg {
     background: url(../images/patterns/slider-background.jpg) no-repeat scroll center top;
     width: 100%;
-    height: auto;
+    height: 575px;
     margin-bottom: 30px;
     color: #fff;
     /*text-shadow: 0px 1px 0px #000;*/
@@ -220,7 +227,7 @@ html[xmlns] .slides {
 }
 /*slider thumbnails*/
 #thumb-slider .thumb-text {
-    padding: 5px;
+    padding: 0px;
     font-size: 14px;
     color: #fff;
     font-weight: 600;
@@ -367,3 +374,4 @@ Tyler
 INDONESIAN
 Tyler
 EXTENSION OPTIONSMORE »
+

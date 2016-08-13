@@ -97,7 +97,10 @@
     <div class="container">
         <div class="row">
             <div class="span12">
-                <h4 class="heading-icon"> <img src="http://aqiqahnurulhayat.com/assets/images/icons/heading-icon-support.png" width="40" height="40" alt="icon" class="icon-small-bg">Berita</h4>
+                <h4 class="heading-icon">
+                    <img src="http://aqiqahnurulhayat.com/assets/images/icons/heading-icon-support.png" width="40" height="40" alt="icon" class="icon-small-bg">
+                    <?=$title?>
+                </h4>
             </div>
         </div>
     </div>
@@ -114,23 +117,19 @@
                 <div class="one-fourth last">
                     <div class="space"></div>
                     <aside>
-
                         <div class="widget-2 sidebarBox widget-container widget_recent_entries" id="recent-posts-2">
-                            <h4 class="widget-title">Berita Terbaru</h4>
+                            <h4 class="widget-title">Berita sehati terkini</h4>
                             <ul>
-                                <li><a href="http://aqiqahnurulhayat.com/news/we-are-new-open-in-bogor-tangerang" title="We are New Open in Bogor & Tangerang">We are New Open in Bogor & Tangerang</a></li>
-                                <li><a href="http://aqiqahnurulhayat.com/news/selamat-idul-fitri-1437-h" title="Selamat Idul Fitri 1437 H">Selamat Idul Fitri 1437 H</a></li>
-                                <li><a href="http://aqiqahnurulhayat.com/news/nama-terbaik-untuk-anak-ketika-di-aqiqah" title="Nama Terbaik Untuk Anak Ketika di Aqiqah">Nama Terbaik Untuk Anak Ketika di Aqiqah</a></li>
-                                <li><a href="http://aqiqahnurulhayat.com/news/ngabuburit-yang-nggak-ribet-ya-pesan-di-aqiqah-nurul-hayat-aja" title="Ngabuburit Yang Nggak Ribet, Ya Pesan di Aqiqah Nurul Hayat Aja!">Ngabuburit Yang Nggak Ribet, Ya Pesan di Aqiqah Nurul Hayat Aja!</a></li>
-                                <li><a href="http://aqiqahnurulhayat.com/news/penutupan-tajil-on-the-road-aqiqah-nurul-hayat" title="Penutupan Ta’jil On The Road Aqiqah Nurul Hayat">Penutupan Ta’jil On The Road Aqiqah Nurul Hayat</a></li>
-                                <li><a href="http://aqiqahnurulhayat.com/news/aqiqah-nurul-hayat-menyalurkan-daging-kurban-untuk-desa-desa-miskin" title="Aqiqah Nurul Hayat Menyalurkan Daging Kurban untuk Desa-desa Miskin">Aqiqah Nurul Hayat Menyalurkan Daging Kurban untuk Desa-desa Miskin</a></li>
+                                <?php foreach($popnews->result() as $pop){?>
+                                    <li><a href="<?=site_url('news/view/'.$pop->slug)?>" title=""><?=$pop->judul?></a></li>
+                                <?php } ?>
                             </ul>
                         </div>
 
                         <div class="widget-3 sidebarBox widget-container widget_categories" id="categories-2">
                             <h4 class="widget-title">Kategori</h4>
                             <ul>
-                                <li class="cat-item cat-item-160610040410439"><a href="http://aqiqahnurulhayat.com/news/categories/serba-serbi" title="Serba-serbi">Serba-serbi</a></li>
+                                <li class="cat-item cat-item-160610040410439"><a href="#" title="Serba-serbi">Serba-serbi</a></li>
                             </ul>
                         </div>
 
@@ -143,8 +142,8 @@
                             <h4 class="widget-title">Brosur</h4>
                             <ul>
                                 <li>
-                                    <a href="http://aqiqahnurulhayat.com/download/30-03-2016_-_Brosur_Aqiqah_NH.pdf" title="Download Brosur Brosur_Aqiqah_NH">
-                                        <div class="brochure-list">Brosur_Aqiqah_NH</div>
+                                    <a href="<?=base_url('upload/share/brosur-harga-aqiqah-sehati.jpg')?>" target="_blank" title="Download Brosur Brosur_AqiqahSehati">
+                                        <div class="brochure-list">Brosur_AqiqahSehati</div>
                                     </a>
                                 </li>
                             </ul>
@@ -162,10 +161,10 @@
                 <div class="berita">
                     <article id="post-160715073443709" class="post-160715073443709 post type-post status-publish format-standard hentry category-design tag-design tag-development tag-tutorials clearfix" role="article">
                         <div class="entry-body">
+                            <?php $data = $posting->row();?>
                             <header>
-
                                 <h3 class="permalink">
-                                    <a href="http://aqiqahnurulhayat.com/news/we-are-new-open-in-bogor-tangerang" rel="bookmark" title="Permanent Link to We are New Open in Bogor & Tangerang">We are New Open in Bogor & Tangerang</a>
+                                    <a href="#" rel="bookmark" title=""><?=$data->judul?></a>
                                 </h3>
 
                                 <ul class="post-meta">
@@ -174,9 +173,9 @@
 
                                         <li>
                                             <span class="title">by</span>
-                                            <a href="#" title="Posts by Aqiqah Nurul Hayat Surabaya" rel="author">Aqiqah Nurul Hayat Surabaya</a>
-                                            <time class="post-date" datetime="15-07-2016">
-                                                <span class="post-month">Juli 15, 2016</span>
+                                            <a href="#" title="Posts by " rel="author"><?=$data->first_name.''.$data->last_name?></a>
+                                            <time class="post-date" datetime="<?=$data->created_at?>">
+                                                <span class="post-month"><?=tgl_indo($data->created_at)?></span>
                                             </time>
 
                                         </li>
@@ -187,19 +186,17 @@
                             <!-- end article header -->
 
                             <div class="inner-content">
-                                <p style="text-align: justify;"><img class=" " src="http://aqiqahnurulhayat.com/upload/images/43a93887698ea5808a391ab1c3f27bff.jpg?w=588&amp;h=588" alt="" width="588" height="588" /></p>
-                                <p style="text-align: justify;">Alhamdulillah, <br /> We are NEW OPEN Bogor &amp; Tangerang.</p>
-                                <p style="text-align: justify;">Kami haturkan,<br /> Terima kasih kepada Sahabat ANH yang telah, masih dan selalu mempercayai kami sebagai penyedia jasa pelayanan Aqiqah.<span class="text_exposed_show"><br /> Terima kasih juga atas pengertian sahabat jika ada ketidak sempurnaan kami selama ini.</span></p>
-                                <div class="text_exposed_show">
-                                    <p style="text-align: justify;">Alhamdulillah, hingga kini kami terus menerima pertanyaan dan pemesanan Aqiqah baik datang ke kantor, menghubungi hotline kami, melalui web, dari messages facebook maupun twitter. Doakan kami selalu menjadi pribadi yang rendah hati, jauh dari sombong, senantiasa dekat dengan Allah dan istiqomah memberikan pelayanan terbaik.</p>
-                                    <p style="text-align: justify;">Bogor &amp; Tangerang sekitarnya, dapat berjumpa di Jl. KH. Achmad Adnawidjaya Blok D1 No.1 Bogor dan Jl. Daan Mogot 955 Suka Asih, Tangerang.</p>
-                                    <p style="text-align: justify;"><a class="_58cn" href="https://www.facebook.com/hashtag/aqiqahnurulhayat?source=feed_text&amp;story_id=1186647694733056" data-ft="{&quot;tn&quot;:&quot;*N&quot;,&quot;type&quot;:104}"><span class="_58cl">#&lrm;</span><span class="_58cm">AqiqahNurulHayat</span></a></p>
-                                </div>              </div>
+                                <p style="text-align: justify;">
+                                    <img class=" " src="<?=base_url('upload/posting/'.$data->gambar)?>" alt="" width="588" height="588" />
+                                </p>
+                                <?=$data->konten?>
+                            </div>
                             <div class="clear"></div>
 
-                            <ul class="post-meta">
+                            <!-- <ul class="post-meta">
                                 <li class="tags">
-                                    <span class="title"></span> <span class="tags">
+                                    <span class="title"></span>
+                                    <span class="tags">
                                                                                                                           <a href="http://aqiqahnurulhayat.com/news/tag/harga-kambing-qurban" rel="tag">harga kambing qurban</a>
                                                   ,                           <a href="http://aqiqahnurulhayat.com/news/tag/ramadhan-1437" rel="tag">ramadhan 1437</a>
                                                   ,                           <a href="http://aqiqahnurulhayat.com/news/tag/kambing-untuk-aqiqah" rel="tag">kambing untuk aqiqah</a>
@@ -236,7 +233,7 @@
                                     <span class="title"></span>
                                     <a href="#comments" title="Comment on We are New Open in Bogor & Tangerang">0</a>
                                 </li>
-                            </ul>
+                            </ul> -->
                             <br>
                             <hr style="margin:5px 0;" />
 
@@ -284,7 +281,7 @@
                                 </p>
                             </div>
                             <!--form-->
-                            <form action="http://aqiqahnurulhayat.com/news/comment/we-are-new-open-in-bogor-tangerang" method="post" accept-charset="utf-8" id="contactform">                <input type="hidden" id="comment-parent" name="parent" value="" />
+                            <form action="#" method="post" accept-charset="utf-8" id="contactform">                <input type="hidden" id="comment-parent" name="parent" value="" />
                                 <fieldset>
                                     <div class="clearfix"></div>
                                     <div id="result"></div>

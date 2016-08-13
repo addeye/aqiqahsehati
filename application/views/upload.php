@@ -140,7 +140,8 @@
             <!--main content starts-->
             <div class="main-content span12">
                 <div class="inner-content">
-                    <form action="http://aqiqahnurulhayat.com/gallery/send" method="post" accept-charset="utf-8" id="uploadform">                    <fieldset>
+                    <form action="#" method="post" accept-charset="utf-8" id="uploadform">
+                        <fieldset>
                             <div class="clearfix"></div>
                             <div id="result"></div>
                             <p>

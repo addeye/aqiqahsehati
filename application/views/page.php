@@ -1,10 +1,14 @@
 <!-- header-btm starts
 ================================================== -->
 <section id="header-btm" class="clearfix">
+    <?php $data = $konten->row(); ?>
     <div class="container">
         <div class="row">
             <div class="span12">
-                <h4 class="heading-icon"> <img src="<?= base_url('assets/images/icons/heading-icon-support.png')?>" width="40" height="40" alt="icon" class="icon-small-bg">Seputar Aqiqah</h4>
+                <h4 class="heading-icon">
+                    <img src="<?= base_url('assets/images/icons/heading-icon-support.png')?>" width="40" height="40" alt="icon" class="icon-small-bg">
+                    <?=$data->judul?>
+                </h4>
             </div>
         </div>
     </div>
@@ -23,13 +27,13 @@
                 <div class="information">
                     <aside>
                         <div class="widget-2 sidebarBox widget-container widget_recent_entries" id="recent-posts-2">
-                            <p><!--more--></p>            </div>
+                            <p><!--more--></p></div>
 
                         <div class="widget-2 sidebarBox widget-container widget_recent_entries" id="brochure-2">
                             <h4 class="widget-title">Brosur</h4>
                             <ul>
                                 <li>
-                                    <a href="#" title="Download Brosur Brosur_AqiqahSehati">
+                                    <a href="<?=base_url('upload/share/brosur-harga-aqiqah-sehati.jpg')?>" target="_blank" title="Download Brosur Brosur_AqiqahSehati">
                                         <div class="brochure-list">Brosur_AqiqahSehati</div>
                                     </a>
                                 </li>
@@ -58,15 +62,9 @@
 
             <!--main content starts-->
             <div class="main-content span8">
-                <h4>Seputar Aqiqah</h4>
 
                 <div class="content-item-wrapper">
-                    <div class="media_embed youtube " style="width: 100%; height: 321px; text-align: justify;">
-                        <iframe src="//www.youtube.com/embed/uP3ycAHbZjg" frameborder="0" width="100%" height="315"></iframe></div>
-                    <p style="text-align: justify;">&nbsp;</p>
-                    <p style="text-align: justify;">Dalam bukunya "Hukum Qurban, Aqiqah dan Sembelihan", KH. Abdurrahman memaparkan bahwa di sebagian kalangan ada yang menimbang rambut bayi itu dengan emas, maksudnya adalah agar lebih banyak lagi sedekahnya. Karena dalam hal bersedekah, lebih banyak adalah lebih baik.</p>
-                    <p style="text-align: justify;">Upacara pemotongan rambut akan dilanjutkan dengan prosesi pemberian nama bayi. Islam menganjurkan agar diberikan nama yang sebaik-baiknya. Dan, jika perlu pemberian nama ini diumumkan kepada masyarakat sekitar.<br /><br />Pemberian nama yang baik untuk anak-anak menjadi salah satu kewajiban orang tua. Di antara nama-nama yang baik yang layak diberikan adalah nama Muhammad.<br /><br />Sebagaimana sabda beliau, Dari Jabir RA dari Nabi SAW, beliau bersabda, "Namailah dengan namaku dan janganlah engkau menggunakan kunyahku." (HR Bukhari dan Muslim)<br /><br />Perihal pemberian nama anak ini, terdapat sejumlah nash syar'i yang menyatakan bahwa ada kaitan antara arti sebuah nama dengan yang diberi nama.<br /><br />Ibnu Al-Qoyyim berkata, "Barang siapa yang memerhatikan sunah, ia akan mendapatkan bahwa makna-makna yang terkandung dalam nama berkaitan dengannya sehingga seolah-olah makna-makna tersebut diambil darinya dan seolah-olah nama-nama tersebut diambil dari makna-maknanya."</p>        </div>
-
+                    <?=$data->konten?>
                 <div class="clear"></div>
 
                 <hr style="margin:5px 0;" />

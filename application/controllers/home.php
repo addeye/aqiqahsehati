@@ -10,56 +10,38 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Home extends CI_Controller
 {
+    private $data;
     public function __construct()
     {
         parent::__construct();
+        $table = 'm_posting';
+        $condition['tipe']='page';
+        $this->data['menu'] = $this->base_model->getData($table,$condition);
     }
 
     public function index()
     {
         $content = "home";
-        $this->template->output(null,$content);
+        $this->template->output($this->data,$content);
     }
 
-    public function page()
+    public function harga()
     {
-        $content = "page";
-        $this->template->output(null,$content);
-        //$this->load->view('page2');
+        $content = "harga";
+        $this->template->output($this->data,$content);
     }
 
-    public function news()
-    {
-        $content = "news";
-        $this->template->output(null,$content);
-    }
-
-    public function post()
-    {
-        $content = "post";
-        $this->template->output(null,$content);
-    }
-
-    public function kontak()
-    {
-        $content = "kontak";
-        $this->template->output(null,$content);
-    }
-
-    public function galeri()
-    {
-        $content = "galeri";
-        $this->template->output(null,$content);
-    }
-
-    public function upload()
-    {
-        $this->load->view('upload');
-    }
-
-    public function order()
-    {
-        $content = "order";
-        $this->template->output(null,$content);
-    }
+//    public function user()
+//    {
+//        $username = 'admin';
+//        $password = '12345678';
+//        $email = 'mokhamad27@gmail.com';
+//        $additional_data = array(
+//            'first_name' => 'Mokhamad',
+//            'last_name' => 'Ariadi',
+//        );
+//        $group = array('1'); // Sets user to admin.
+//
+//        $this->ion_auth->register($username, $password, $email, $additional_data, $group);
+//    }
 }

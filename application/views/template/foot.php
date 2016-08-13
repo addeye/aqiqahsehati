@@ -22,121 +22,25 @@
                 <h5>Testimonial</h5>
                 <ul class="list-info scrollable">
                     <li>
-                        <img src="http://aqiqahnurulhayat.com/upload/testimonial/default.jpg" alt="image" />
+                        <img src="<?=base_url('upload/testimonial/default.jpg')?>" alt="image" />
                         <div class="testimonial">
-                            <span>Bismillaah, Alhamdulillaah, aqiqah sehati sll berkah. Smoga . . . .</span>
+                            <span>Aqiqah Sehati " Sehati mmg layak jd pilihan</span>
                             <h6 class="bottom">
-                                <small class="left">04 Pebruari 2016</small>
+                                <small class="left">01 Agustus 2016</small>
                                 <span class="separator">|</span>
-                                <a href="http://aqiqahnurulhayat.com/testimonial#comment-160204133044723" class="testi-link">ustadzah mimin</a>
+                                <a href="#" class="testi-link">dr. Atiek TA</a>
                             </h6>
                         </div>
                         <div class="clear"></div>
                     </li>
                     <li>
-                        <img src="http://aqiqahnurulhayat.com/upload/testimonial/default.jpg" alt="image" />
+                        <img src="<?=base_url('upload/testimonial/default.jpg')?>" alt="image" />
                         <div class="testimonial">
-                            <span>Alhamdulillah aqiqah putra kedua kami lancar berkat nurul hayat.. . . . .</span>
+                            <span>Semoga mendatangkan kemaslahatan untuk Ummat</span>
                             <h6 class="bottom">
-                                <small class="left">24 Januari 2016</small>
+                                <small class="left">27 Juli 2016</small>
                                 <span class="separator">|</span>
-                                <a href="http://aqiqahnurulhayat.com/testimonial#comment-160124163912937" class="testi-link">Muchamad taufik</a>
-                            </h6>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <img src="http://aqiqahnurulhayat.com/upload/testimonial/default.jpg" alt="image" />
-                        <div class="testimonial">
-                            <span>maaf sebelumnya, seandainya saya mau memesan ke aqiqah sehati ini gimana . . . .</span>
-                            <h6 class="bottom">
-                                <small class="left">08 Januari 2016</small>
-                                <span class="separator">|</span>
-                                <a href="http://aqiqahnurulhayat.com/testimonial#comment-160108105013532" class="testi-link">selvy kumalasari</a>
-                            </h6>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <img src="http://aqiqahnurulhayat.com/upload/testimonial/default.jpg" alt="image" />
-                        <div class="testimonial">
-                            <span>Alhamdulillah hajat saya untuk aqiqah sudah terwujud, semua dimudahkan . . . .</span>
-                            <h6 class="bottom">
-                                <small class="left">08 Oktober 2015</small>
-                                <span class="separator">|</span>
-                                <a href="http://aqiqahnurulhayat.com/testimonial#comment-151008110347624" class="testi-link">MELIA</a>
-                            </h6>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <img src="http://aqiqahnurulhayat.com/upload/testimonial/default.jpg" alt="image" />
-                        <div class="testimonial">
-                            <span>Alhamdulillah, sudah aqiqah putra kedua kami melalui layanan aqiqah . . . .</span>
-                            <h6 class="bottom">
-                                <small class="left">30 Agustus 2015</small>
-                                <span class="separator">|</span>
-                                <a href="http://aqiqahnurulhayat.com/testimonial#comment-150830170224380" class="testi-link">Hendro Saifuddin </a>
-                            </h6>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <img src="http://aqiqahnurulhayat.com/upload/testimonial/default.jpg" alt="image" />
-                        <div class="testimonial">
-                            <span>Saya sekarang baru hamil 9 bulan....inshaallah kami berencana akan . . . .</span>
-                            <h6 class="bottom">
-                                <small class="left">25 Mei 2015</small>
-                                <span class="separator">|</span>
-                                <a href="http://aqiqahnurulhayat.com/testimonial#comment-150525205818801" class="testi-link">desi</a>
-                            </h6>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <img src="http://aqiqahnurulhayat.com/upload/testimonial/default.jpg" alt="image" />
-                        <div class="testimonial">
-                            <span>Saya berencana akan meng'aqiqah'kan anak saya,di awal bulan agustus . . . .</span>
-                            <h6 class="bottom">
-                                <small class="left">09 April 2015</small>
-                                <span class="separator">|</span>
-                                <a href="http://aqiqahnurulhayat.com/testimonial#comment-150409180008941" class="testi-link">Ristia</a>
-                            </h6>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <img src="http://aqiqahnurulhayat.com/upload/testimonial/default.jpg" alt="image" />
-                        <div class="testimonial">
-                            <span>Masakannya mantap...bisa buat rekomendasi ke temen2 nih..makasih</span>
-                            <h6 class="bottom">
-                                <small class="left">09 April 2015</small>
-                                <span class="separator">|</span>
-                                <a href="http://aqiqahnurulhayat.com/testimonial#comment-150409084344492" class="testi-link">rizky</a>
-                            </h6>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <img src="http://aqiqahnurulhayat.com/upload/testimonial/default.jpg" alt="image" />
-                        <div class="testimonial">
-                            <span>Hari ini saya akikahkan anak ke 3 di nurul hayat. Trima kasih karna . . . .</span>
-                            <h6 class="bottom">
-                                <small class="left">18 Januari 2015</small>
-                                <span class="separator">|</span>
-                                <a href="http://aqiqahnurulhayat.com/testimonial#comment-150118225903234" class="testi-link">Bramadi hp</a>
-                            </h6>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
-                    <li>
-                        <img src="http://aqiqahnurulhayat.com/upload/testimonial/default.jpg" alt="image" />
-                        <div class="testimonial">
-                            <span>alhamdulillah lancar semuanya</span>
-                            <h6 class="bottom">
-                                <small class="left">09 Januari 2015</small>
-                                <span class="separator">|</span>
-                                <a href="http://aqiqahnurulhayat.com/testimonial#comment-150109043355475" class="testi-link">abu nada</a>
+                                <a href="#" class="testi-link">Ir. Yusuf Rohana - Aleg DPRD Jatim</a>
                             </h6>
                         </div>
                         <div class="clear"></div>
