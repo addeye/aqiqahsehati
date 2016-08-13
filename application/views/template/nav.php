@@ -44,7 +44,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="<?=site_url('home/harga')?>" class="menu harga">Harga</a>
+                            <a href="<?=site_url('harga')?>" class="menu harga">Harga</a>
                             <!-- Menu_mobile_hilang_hendrick <ul>
                                 <li><a href="http://aqiqahnurulhayat.com/jawa-timur">Jawa Timur</a></li>
                                 <li><a href="http://aqiqahnurulhayat.com/jabodetabek">JABODETABEK</a></li>

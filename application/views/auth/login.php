@@ -31,13 +31,13 @@
 <body class="login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>Aqiqah</b>SEHATI</a>
+    <a href="<?=base_url()?>"><img src="<?= base_url('assets/images/logo.png')?>"alt="logo"></a>
   </div><!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg"><?=isset($message)?$message:'Sign in to start your session'?></p>
     <form action="<?=site_url('auth/login')?>" method="post">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" name="identity" placeholder="Email"/>
+        <input type="text" class="form-control" name="identity" placeholder="Username"/>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
@@ -48,7 +48,7 @@
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox" name="remember" value="1"> Remember Me
+              <input type="checkbox" name="remember" value="TRUE"> Remember Me
             </label>
           </div>
         </div><!-- /.col -->

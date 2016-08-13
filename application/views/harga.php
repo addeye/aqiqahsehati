@@ -92,8 +92,10 @@
                         <div class="widget-2 sidebarBox widget-container widget_recent_entries" id="recent-posts-2">
                             <h4 class="widget-title">Other Page</h4>
                             <ul>
-                                <li><a href="<?=base_url('home/page')?>" title="Seputar Aqiqah">Tentang Sehati</a></li>
-                                <li><a href="<?=base_url('home/kontak')?>" title="Kontak">Kontak</a></li>
+                                <?php foreach($menu->result() as $row ) {?>
+                                    <li><a href="<?=base_url('page/'.$row->slug)?>" title="Kontak"><?=$row->judul?></a></li>
+                                <?php } ?>
+                                <li><a href="<?=base_url('contact')?>" title="Kontak">Kontak</a></li>
                             </ul>
                         </div>
                     </aside>

@@ -109,7 +109,7 @@
                 <div class="clearfix"></div>
                 <div id="result"></div>
 
-                <form action="<?=site_url('order/send')?>" method="post" accept-charset="utf-8">
+                <form action="<?=site_url('home/act_order')?>" method="post" accept-charset="utf-8">
                     <fieldset>
                         <p style="border-bottom:1px solid #e2e2e2;"><strong>Data Pemesanan</strong></p>
                         <p>
@@ -133,13 +133,7 @@
                             </select>
                         </p>
                         <br>
-                        <p>
-                            <label>Kelurahan :</label>
-                            <select id="kel" name="kel" class="js-select2">
-                                <option value="">Pilih Kelurahan</option>
-                            </select>
-                        </p>
-                        <br>
+
                         <p>
                             <label>Alamat :</label>
                             <textarea  rows="4" name="address" id="address" class="required" required></textarea>
@@ -383,7 +377,7 @@
 </section>
 
 <input type="hidden" id="urlkec" value="<?=site_url('order/getkec')?>">
-<input type="hidden" id="urlkel" value="<?=site_url('order/getkel')?>">
+<input type="hidden" id="urlkec" value="<?=site_url('order/getkel')?>">
 
 <script>
     $('#kota').change(function(){
@@ -404,7 +398,7 @@
 
     $('#kec').change(function(){
         var id = this.value;
-        var url = $('#urlkel').val();
+        var url = $('#urlkec').val();
         console.log(id);
 
         $.ajax({
@@ -414,7 +408,7 @@
         })
             .success(function(response){
                 /*optional stuff to do after success */
-                $('#kel').html(response);
+                $('#kec').html(response);
             });
     });
 
