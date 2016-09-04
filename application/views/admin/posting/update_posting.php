@@ -18,7 +18,7 @@
         <div class="row">
             <form action="<?=site_url('content/update_posting')?>" method="post" enctype="multipart/form-data">
                 <?php $data = $page->row(); ?>
-                <input type="hidden" name="id" value="<?=$data->id_posting?>">
+                <input type="hidden" name="id" value="<?=$data->id?>">
                 <div class="col-xs-8">
                     <div class="box">
                         <div class="box-header">
@@ -65,6 +65,14 @@
                                             <option value="<?=$row->id?>" <?=$data->kategori==$row->id?'selected':''?> ><?=$row->kategori?></option>
                                         <?php }?>
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Meta Description</label>
+                                    <textarea class="form-control" name="meta_description"><?=$data->meta_description?></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Meta Keyword</label>
+                                    <textarea class="form-control" name="meta_keyword"><?=$data->meta_keyword?></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                                 <a href="<?=site_url('content/posting')?>" class="btn btn-warning">Kembali</a>

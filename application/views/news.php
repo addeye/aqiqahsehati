@@ -50,7 +50,7 @@
                             <h4 class="widget-title">Berita sehati terkini</h4>
                             <ul>
                                 <?php foreach($popnews->result() as $pop){?>
-                                <li><a href="<?=site_url('news/view/'.$pop->slug)?>" title=""><?=$pop->judul?></a></li>
+                                <li><a href="<?=site_url('berita/'.$pop->slug)?>" title=""><?=$pop->judul?></a></li>
                                 <?php } ?>
                             </ul>
                         </div>
@@ -58,7 +58,9 @@
                         <div class="widget-3 sidebarBox widget-container widget_categories" id="categories-2">
                             <h4 class="widget-title">Kategori</h4>
                             <ul>
-                                <li class="cat-item cat-item-160610040410439"><a href="#" title="Serba-serbi">Serba-serbi</a></li>
+                                <?php foreach($side_kategori->result() as $row){?>
+                                <li class="cat-item cat-item-160610040410439"><a href="<?=site_url('berita/kategori/'.$row->slug)?>" title="Serba-serbi"><?=$row->kategori?></a></li>
+                                <?php } ?>
                             </ul>
                         </div>
 
@@ -91,7 +93,7 @@
                         <div class="entry-body">
                             <header>
                                 <h3 class="permalink">
-                                    <a href="<?=site_url('home/post')?>" rel="bookmark" title=""><?=$row->judul?></a>
+                                    <a href="<?=site_url('berita/'.$row->slug)?>" rel="bookmark" title="<?=$row->judul?>"><?=$row->judul?></a>
                                 </h3>
 
                                 <ul class="post-meta">
@@ -114,13 +116,13 @@
 
                             <div class="inner-content">
                                 <p style="text-align: justify;">
-                                    <img class=" " src="<?=base_url('upload/posting/'.$row->gambar)?>" alt="" width="588" height="588" />
+                                    <img class=" " src="<?=base_url('upload/posting/'.$row->gambar)?>" alt="image" width="588" height="588" />
                                 </p>
-                                <?=character_limiter($row->konten,500)?>
+                                <?=character_limiter($row->konten,300)?>
                             </div>
 
                             <p class="readmore">
-                                <a href="#news" title="">Read more&#8230;</a>
+                                <a href="<?=site_url('berita/'.$row->slug)?>" title="">Read more&#8230;</a>
                             </p>
 
                             <div class="clear"></div>

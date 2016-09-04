@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /front
+Disallow: /upload
+Disallow: /assets
+User-agent: Mediapartners-Google
+Allow: /
+User-agent: Adsbot-Google
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Googlebot-Mobile
+Allow: /
+Sitemap: http://www.aqiqahsehati.com/sitemap.xml

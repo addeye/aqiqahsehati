@@ -29,7 +29,7 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-3 control-label">Alamat</label>
                                 <div class="col-sm-8">
-                                    <textarea name="keterangan" class="form-control textarea" rows="8"><?=$data->keterangan?></textarea>
+                                    <textarea name="keterangan" class="form-control" id="editor1" rows="8"><?=$data->keterangan?></textarea>
                                 </div>
                             </div>
                             <div class="form-group">

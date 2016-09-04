@@ -76,7 +76,7 @@
                                             Pesan sekarang juga..</p>
                                     </div> -->
                                     <div class="span12">
-                                        <img src="<?=base_url('upload/banner/banner(1).png')?>" alt="slide"/>
+                                        <img src="<?=base_url('upload/banner/aqiqah-sehati-aqiqah-dapat-infaqnya-berlipat.png')?>" alt="image"/>
                                         <!-- <div class="flex-caption">Libur telah tiba, saat tepat untuk meng-aqiqoi putra-putri kita.
                                             Nikmati berbagai pilihan menu dan paket aqiqah untuk moment istimewa Anda.</div> -->
                                     </div>
@@ -92,7 +92,7 @@
                                         </p>
                                     </div> -->
                                     <div class="span12">
-                                        <img src="<?=base_url('upload/banner/banner(2).png')?>" alt="slide"/>
+                                        <img src="<?=base_url('upload/banner/aqiqah-sehati-melayani-dengan-sepenuh-hati.png')?>" alt="image"/>
                                        <!--  <p class="flex-caption">Jangan tergoda dengan iming-iming harga murah tapi diragukan ke-Syarian aqiqahnya.
 
                                             Hanya di Aqiqah Sehati terjamin kesyariaan dibawah pengawasan MUI dan telah direkomendasikan banyak tokoh dan  ulama nasional.</p> -->
@@ -106,7 +106,7 @@
                                         <p style="white-space:pre-line;">Setiap ibadah akan memberikan nilai lebih jika tak hanya hubungan dengan Allah yang menjadi tujuan, namun juga nilai kemanfaatan bagi umat menjadi nafas setiap prosesnya. Kami bantu salurkan Aqiqah Anda untuk dakwah di desa-desa miskin</p>
                                     </div> -->
                                     <div class="span12">
-                                        <img src="<?=base_url('upload/banner/banner(3).png')?>" alt="slide"/>
+                                        <img src="<?=base_url('upload/banner/aqiqah-sehati-rasanya-tak-mau-diganti.png')?>" alt="image"/>
                                         <!-- <div class="flex-caption">Libur telah tiba, saat tepat untuk meng-aqiqoi putra-putri kita.
                                             Nikmati berbagai pilihan menu dan paket aqiqah untuk moment istimewa Anda.</div> -->
                                     </div>
@@ -119,7 +119,7 @@
                                         <p style="white-space:pre-line;">Hadir di Surabaya, Sidoarjo, Malang, Kediri, Tuban, Gresik, Lamongan, Madiun, Mojokerto, Bojonegoro, Jember, Banyuwangi, Semarang, Yogyakarta, Solo, Tangerang Selatan, Jakarta, Bandung, Balikpapan, Medan, dll</p>
                                     </div> -->
                                     <div class="span12">
-                                        <img src="<?=base_url('upload/banner/banner(4).png')?>" alt="slide"/>
+                                        <img src="<?=base_url('upload/banner/aqiqah-sehati-sedapnya-sampai-ke-hati.png')?>" alt="image"/>
                                         <!-- <div class="flex-caption">Libur telah tiba, saat tepat untuk meng-aqiqoi putra-putri kita.
                                             Nikmati berbagai pilihan menu dan paket aqiqah untuk moment istimewa Anda.</div> -->
                                     </div>
@@ -133,7 +133,7 @@
                                             Karena seluruh laba usaha ini digunakan untuk mendukung program pemberdayaan yatim dan dhuafa dibawah naungan Lembaga Amil Zakat Nasional Nurul Hayat.</p>
                                     </div> -->
                                     <div class="span12">
-                                        <img src="<?=base_url('upload/banner/banner(3).png')?>" alt="slide"/>
+                                        <img src="<?=base_url('upload/banner/aqiqah-sehati-rasanya-tak-mau-diganti.png')?>" alt="image"/>
                                         <!-- <div class="flex-caption">Libur telah tiba, saat tepat untuk meng-aqiqoi putra-putri kita.
                                             Nikmati berbagai pilihan menu dan paket aqiqah untuk moment istimewa Anda.</div> -->
                                     </div>
@@ -217,7 +217,7 @@
                     </li>
                     <li>
                         <div class="icon-bg">
-                            <a href="#">
+                            <a href="<?=site_url('harga-paket-aqiqah-murah')?>">
                                 <img src="<?=base_url('upload/icon/icon3.png')?>" width="120" height="120" alt="icon">
                             </a>
                         </div>
@@ -244,46 +244,19 @@
                 <div id="carousel" class="es-carousel-wrapper">
                     <div class="es-carousel">
                         <ul>
+                            <?php foreach($testimoni->result() as $row) {?>
                             <li>
                                 <div class="folio-thumb">
-                                    <img src="<?=base_url('upload/gallery/testimoni.jpg')?>" alt="image" />
-                                    <a href="<?=base_url('upload/gallery/testimoni.jpg')?>" data-rel="prettyPhoto[gallery]" title="" class="icon-zoom"></a>
+                                    <img src="<?=base_url('upload/gallery/'.$row->gambar)?>" alt="sahabat sehati - <?=$row->judul?>" />
+                                    <a href="<?=base_url('upload/gallery/'.$row->gambar)?>" data-rel="prettyPhoto[gallery]" title="<?=$row->judul?>" class="icon-zoom"></a>
                                 </div>
 
-                                <h5>Agung Wijayanto </h5>
-                                <p>Alhamdulillah enak & pas banget.
-
-                                    Agung Wijayanto - Kantor Pajak Madya Surabaya</p>
-                            </li>
-                            <li>
-                                <div class="folio-thumb">
-                                    <img src="<?=base_url('upload/gallery/testimoni.jpg')?>" alt="image" />
-                                    <a href="<?=base_url('upload/gallery/testimoni.jpg')?>" data-rel="prettyPhoto[gallery]" title="" class="icon-zoom"></a>
+                                <h5><?=$row->judul?></h5>
+                                <div class="blackscroll" id="pesan">
+                                    <?=$row->keterangan?>
                                 </div>
-
-                                <h5>dr. Atiek TA - Puskesmas Gayungan</h5>
-                                <p>Aqiqah Sehati
-                                    " Sehati mmg layak jd pilihan"</p>
                             </li>
-                            <li>
-                                <div class="folio-thumb">
-                                    <img src="<?=base_url('upload/gallery/testimoni.jpg')?>" alt="image" />
-                                    <a href="<?=base_url('upload/gallery/testimoni.jpg')?>" data-rel="prettyPhoto[gallery]" title="" class="icon-zoom"></a>
-                                </div>
-
-                                <h5>Ir. Yusuf Rohana - Aleg DPRD Jatim</h5>
-                                <p>Semoga mendatangkan kemaslahatan untuk Ummat
-                                </p>
-                            </li>
-                            <li>
-                                <div class="folio-thumb">
-                                    <img src="<?=base_url('upload/gallery/testimoni.jpg')?>" alt="image" />
-                                    <a href="<?=base_url('upload/gallery/testimoni.jpg')?>" data-rel="prettyPhoto[gallery]" title="" class="icon-zoom"></a>
-                                </div>
-
-                                <h5>M.Aziz - Direktur PT. TERAFULK Megantara Design</h5>
-                                <p>SUbhaanallah.....betul2 sedapnya sampai ke hati</p>
-                            </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>
@@ -354,7 +327,7 @@
                     <h1 style="font-weight: bold; color: black;">Aqiqah Sehati</h1>
                     <div style="color: black">
                         Kami siap melayani pesanan Anda !					</div>
-                    <a href="<?=base_url('home/order')?>" class="mybtn">PESAN SEKARANG !</a> </div>
+                    <a href="<?=base_url('order')?>" class="mybtn">PESAN SEKARANG !</a> </div>
             </div>
         </div>
         <!--box ends-->

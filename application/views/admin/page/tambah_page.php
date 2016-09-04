@@ -51,6 +51,14 @@
                                 <label for="exampleInputFile">File Gambar</label>
                                 <input type="file" name="gambar" id="exampleInputFile">
                             </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Meta Description</label>
+                                <textarea class="form-control" name="meta_description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Meta Keyword</label>
+                                <textarea class="form-control" name="meta_keyword"></textarea>
+                            </div>
                             <button type="submit" class="btn btn-primary">Simpan</button>
                             <a href="<?=site_url('content/page')?>" class="btn btn-warning">Kembali</a>
                         </div>

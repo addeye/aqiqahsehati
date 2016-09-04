@@ -21,7 +21,11 @@ class Front extends CI_Controller
     public function index()
     {
         $content = "admin/home";
-        $this->template_admin->output(null, $content);
+        $data['order'] = $this->base_model->get('m_order');
+        $data['posting'] = $this->base_model->get('m_posting');
+        $data['testimoni'] = $this->base_model->get('m_testimoni');
+        $data['btamu'] = $this->base_model->get('m_bukutamu');
+        $this->template_admin->output($data, $content);
     }
 
     public function linksocial()
@@ -50,9 +54,11 @@ class Front extends CI_Controller
         $table = 'm_linksocial';
         $id = $this->input->post('id');
         $link = $this->input->post('link');
+        $icon = $this->input->post('icon');
         $condition['id'] = $id;
         $data = array(
-            'link' => $link
+            'link' => $link,
+            'icon' => $icon
         );
         $this->base_model->updateData($table, $data, $condition);
         redirect('front/linksocial');
@@ -150,5 +156,25 @@ class Front extends CI_Controller
         $condition['id'] = $id;
         $this->base_model->deleteData($table,$condition);
         $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-success\" id=\"alert\">Data Berhasil Dihapus !!</div></div>");
+    }
+
+    public function password()
+    {
+        $data['title'] = 'Password';
+        $data['sub_title'] = 'Update Password';
+        $content = "admin/password/update_password";
+        $this->template_admin->output($data,$content);
+    }
+
+    public function update_password()
+    {
+        $password = $this->input->post('password');
+        $id = $this->ion_auth->user()->row()->id;
+        $data = array(
+            'password' => $password,
+        );
+        $this->ion_auth->update($id, $data);
+        $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-success\" id=\"alert\">Password Berhasil Dirubah !!</div></div>");
+        redirect('front/password');
     }
 }

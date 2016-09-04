@@ -13,19 +13,20 @@ class Base_model extends CI_Model
         parent::__construct();
     }
 
-    function get($table)
+    function get($table,$orderby='DESC')
     {
         $this->db->select("*");
         $this->db->from($table);
-
+        $this->db->order_by($table.'.id', $orderby);
         return $this->db->get();
     }
 
-    function getData($table, $condition)
+    function getData($table, $condition,$orderby='DESC')
     {
         $this->db->where($condition);
         $this->db->select("*");
         $this->db->from($table);
+        $this->db->order_by($table.'.id', $orderby);
 
         return $this->db->get();
     }

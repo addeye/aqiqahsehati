@@ -20,7 +20,7 @@ class News_model extends CI_Model
         $this->db->join('users', 'users.id = m_posting.id_pengguna');
         $this->db->join('m_kategori', 'm_kategori.id = m_posting.kategori');
         $this->db->where('m_posting.tipe','post');
-        $this->db->order_by('m_posting.id_posting', 'DESC');
+        $this->db->order_by('m_posting.id', 'DESC');
         $query = $this->db->get();
         return $query;
     }
@@ -33,10 +33,11 @@ class News_model extends CI_Model
         $this->db->join('m_kategori', 'm_kategori.id = m_posting.kategori');
         $this->db->where('m_posting.tipe','post');
         $this->db->limit($num, $offset);
-        $this->db->order_by('m_posting.id_posting', 'DESC');
+        $this->db->order_by('m_posting.id', 'DESC');
         $query = $this->db->get();
         return $query;
     }
+
     public function getLimit($num=5)
     {
         $this->db->select('m_posting.*,users.first_name, users.last_name, m_kategori.kategori');
@@ -44,7 +45,7 @@ class News_model extends CI_Model
         $this->db->join('users', 'users.id = m_posting.id_pengguna');
         $this->db->join('m_kategori', 'm_kategori.id = m_posting.kategori');
         $this->db->where('m_posting.tipe','post');
-        $this->db->order_by('m_posting.id_posting', 'DESC');
+        $this->db->order_by('m_posting.id', 'DESC');
         $this->db->limit($num);
         $query = $this->db->get();
         return $query;
@@ -58,7 +59,49 @@ class News_model extends CI_Model
         $this->db->join('m_kategori', 'm_kategori.id = m_posting.kategori');
         $this->db->where('m_posting.tipe','post');
         $this->db->where('m_posting.slug',$string);
-        $this->db->order_by('m_posting.id_posting', 'DESC');
+        $this->db->order_by('m_posting.id', 'DESC');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function getText($string,$num=5,$offset=null)
+    {
+        $this->db->select('m_posting.*,users.first_name, users.last_name, m_kategori.kategori');
+        $this->db->from('m_posting');
+        $this->db->join('users', 'users.id = m_posting.id_pengguna');
+        $this->db->join('m_kategori', 'm_kategori.id = m_posting.kategori');
+        $this->db->where('m_posting.tipe','post');
+        $this->db->like('m_posting.judul',$string);
+        $this->db->limit($num, $offset);
+        $this->db->order_by('m_posting.id', 'DESC');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function getSlugKategori($string,$num=5,$offset=null)
+    {
+        $this->db->select('m_posting.*,users.first_name, users.last_name, m_kategori.kategori');
+        $this->db->from('m_posting');
+        $this->db->join('users', 'users.id = m_posting.id_pengguna');
+        $this->db->join('m_kategori', 'm_kategori.id = m_posting.kategori');
+        $this->db->where('m_posting.tipe','post');
+        $this->db->where('m_kategori.slug',$string);
+        $this->db->limit($num, $offset);
+        $this->db->order_by('m_posting.id', 'DESC');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function getSlugKategoriPaging($slug,$num, $offset)
+    {
+        $this->db->select('m_posting.*,users.first_name, users.last_name, m_kategori.kategori');
+        $this->db->from('m_posting');
+        $this->db->join('users', 'users.id = m_posting.id_pengguna');
+        $this->db->join('m_kategori', 'm_kategori.id = m_posting.kategori');
+        $this->db->where('m_posting.tipe','post');
+        $this->db->where('m_kategori.slug',$slug);
+        $this->db->limit($num, $offset);
+        $this->db->order_by('m_posting.id', 'DESC');
         $query = $this->db->get();
         return $query;
     }

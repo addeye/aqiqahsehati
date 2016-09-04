@@ -105,11 +105,13 @@
 
             <!--main content starts-->
             <div class="main-content span8">
-                <h4>Harga</h4>
+                <h2>Harga Paket Aqiqah Murah Surabaya dan Sidoarjo</h2>
+                <p>Cuma ada disini dengan harga yang bersahabat semua bisa beraqiqah dengan mudah, enak, dan nggak ribet.
+                    segera hubungi <span style="font-size: 20px;">0822-1006-2007</span> atau Pesan <a href="order">Disini</a></p>
                                 <p><strong>Harga paket Aqiqah (harga perekor Kambing) sebagai berikut:</strong></p>
-                                <table class="default" style="width: 555px; height: 254px;" border="0">
+                                <table width="100%" border="1" cellpadding="5" cellspacing="0">
                                     <tbody>
-                                    <tr class="first even">
+                                    <tr class="first even" style="background-color: #ff720b;">
                                         <td class="first" style="text-align: center;"><strong>No.</strong></td>
                                         <td style="text-align: center;"><strong>Paket </strong></td>
                                         <td style="text-align: center;"><strong>Kambing Betina</strong></td>
@@ -139,22 +141,22 @@
                                     </tr>
                                     <tr class="even">
                                         <td class="first">
-                                            <p><strong><span style="color: #ff9900;">&nbsp;2.</span></strong></p>
+                                            <p><strong><span style="color: #ff720b;">&nbsp;2.</span></strong></p>
                                         </td>
                                         <td>
-                                            <p><strong><span style="color: #ff9900;">Sedap 3</span></strong></p>
+                                            <p><strong><span style="color: #ff720b;">Sedap 3</span></strong></p>
                                         </td>
                                         <td style="text-align: center;">
-                                            <p><strong><span style="color: #ff9900;">&nbsp;1.850.000</span></strong></p>
+                                            <p><strong><span style="color: #ff720b;">&nbsp;1.850.000</span></strong></p>
                                         </td>
                                         <td style="text-align: center;">
-                                            <p><strong><span style="color: #ff9900;">2.600.000</span></strong></p>
+                                            <p><strong><span style="color: #ff720b;">2.600.000</span></strong></p>
                                         </td>
                                         <td style="text-align: center;">
-                                            <p><strong><span style="color: #ff9900;">450 tusuk</span></strong></p>
+                                            <p><strong><span style="color: #ff720b;">450 tusuk</span></strong></p>
                                         </td>
                                         <td class="last" style="text-align: center;">
-                                            <p><strong><span style="color: #ff9900;">&nbsp;140 porsi</span></strong></p>
+                                            <p><strong><span style="color: #ff720b;">&nbsp;140 porsi</span></strong></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -168,7 +170,7 @@
                                             <p><strong>&nbsp;1.400.000</strong></p>
                                         </td>
                                         <td style="text-align: center;">
-                                            <p><strong>&nbsp;1.85.000</strong></p>
+                                            <p><strong>&nbsp;1.850.000</strong></p>
                                         </td>
                                         <td style="text-align: center;">
                                             <p><strong>300 tusuk</strong></p>
@@ -179,22 +181,22 @@
                                     </tr>
                                     <tr class="even">
                                         <td class="first">
-                                            <p><strong><span style="color: #ff9900;">&nbsp;4.</span></strong></p>
+                                            <p><strong><span style="color: #ff720b;">&nbsp;4.</span></strong></p>
                                         </td>
                                         <td>
-                                            <p><strong><span style="color: #ff9900;">Sedap 1</span></strong></p>
+                                            <p><strong><span style="color: #ff720b;">Sedap 1</span></strong></p>
                                         </td>
                                         <td style="text-align: center;">
-                                            <p><strong><span style="color: #ff9900;">&nbsp;1.300.000</span></strong></p>
+                                            <p><strong><span style="color: #ff720b;">&nbsp;1.300.000</span></strong></p>
                                         </td>
                                         <td style="text-align: center;">
-                                            <p><strong><span style="color: #ff9900;">&nbsp; 1.750.000<br /></span></strong></p>
+                                            <p><strong><span style="color: #ff720b;">&nbsp; 1.750.000<br /></span></strong></p>
                                         </td>
                                         <td style="text-align: center;">
-                                            <p><strong><span style="color: #ff9900;">250 tusuk</span></strong></p>
+                                            <p><strong><span style="color: #ff720b;">250 tusuk</span></strong></p>
                                         </td>
                                         <td class="last" style="text-align: center;">
-                                            <p><strong><span style="color: #ff9900;">&nbsp;80 porsi</span></strong></p>
+                                            <p><strong><span style="color: #ff720b;">&nbsp;80 porsi</span></strong></p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -219,9 +221,9 @@
                                 </table>
                                 <h2>&nbsp;</h2>
                                 <p><strong>Aqiqah Sehati bisa dengan Nasi Kotak. Siap langsung diantarkan :</strong></p>
-                                <table class="default" style="width: 555px; height: 273px;" border="0">
+                                <table width="100%" border="1" cellpadding="5" cellspacing="0">
                                     <tbody>
-                                    <tr class="first even">
+                                    <tr class="first even" style="background-color: #ff720b;">
                                         <td class="first" style="text-align: center;">
                                             <p><strong>No. <br /></strong></p>
                                         </td>
@@ -238,13 +240,13 @@
                                         <td class="last" style="text-align: center;"><strong>180 kotak</strong></td>
                                     </tr>
                                     <tr class="even">
-                                        <td class="first"><span style="color: #ff9900;"><strong>&nbsp;2.</strong></span></td>
-                                        <td><span style="color: #ff9900;"><strong>Sedap 3 </strong></span></td>
+                                        <td class="first"><span style="color: #ff720b;"><strong>&nbsp;2.</strong></span></td>
+                                        <td><span style="color: #ff720b;"><strong>Sedap 3 </strong></span></td>
                                         <td style="text-align: center;">
-                                            <p><span style="color: #ff9900;"><strong>3.950.000</strong></span></p>
+                                            <p><span style="color: #ff720b;"><strong>3.950.000</strong></span></p>
                                         </td>
-                                        <td style="text-align: center;"><span style="color: #ff9900;"><strong>&nbsp;4.700.000</strong></span></td>
-                                        <td class="last" style="text-align: center;"><span style="color: #ff9900;"><strong>140 kotak</strong></span></td>
+                                        <td style="text-align: center;"><span style="color: #ff720b;"><strong>&nbsp;4.700.000</strong></span></td>
+                                        <td class="last" style="text-align: center;"><span style="color: #ff720b;"><strong>140 kotak</strong></span></td>
                                     </tr>
                                     <tr>
                                         <td class="first"><strong>&nbsp;3.</strong></td>
@@ -254,11 +256,11 @@
                                         <td class="last" style="text-align: center;"><strong>100 kotak</strong></td>
                                     </tr>
                                     <tr class="even">
-                                        <td class="first"><span style="color: #ff9900;"><strong>&nbsp;4.</strong></span></td>
-                                        <td><span style="color: #ff9900;"><strong>Sedap 1</strong></span></td>
-                                        <td style="text-align: center;"><span style="color: #ff9900;"><strong>2.500.000</strong></span></td>
-                                        <td style="text-align: center;"><span style="color: #ff9900;"><strong>&nbsp;2.950.000</strong></span></td>
-                                        <td class="last" style="text-align: center;"><span style="color: #ff9900;"><strong>&nbsp;80 kotak</strong></span></td>
+                                        <td class="first"><span style="color: #ff720b;"><strong>&nbsp;4.</strong></span></td>
+                                        <td><span style="color: #ff720b;"><strong>Sedap 1</strong></span></td>
+                                        <td style="text-align: center;"><span style="color: #ff720b;"><strong>2.500.000</strong></span></td>
+                                        <td style="text-align: center;"><span style="color: #ff720b;"><strong>&nbsp;2.950.000</strong></span></td>
+                                        <td class="last" style="text-align: center;"><span style="color: #ff720b;"><strong>&nbsp;80 kotak</strong></span></td>
                                     </tr>
                                     <tr>
                                         <td class="first"><strong>&nbsp;5.</strong></td>

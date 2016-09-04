@@ -1,7 +1,7 @@
 <!-- header-btm starts
 ================================================== -->
 <section id="header-btm" class="clearfix">
-    <?php $data = $konten->row(); ?>
+    <?php $data = $posting[0]; ?>
     <div class="container">
         <div class="row">
             <div class="span12">
@@ -49,7 +49,7 @@
                         <div class="widget-2 sidebarBox widget-container widget_recent_entries" id="recent-posts-2">
                             <h4 class="widget-title">Other Page</h4>
                             <ul>
-                                <li><a href="<?=site_url('harga')?>" title="Harga">Harga</a></li>
+                                <li><a href="<?=site_url('harga-paket-aqiqah-murah')?>" title="Harga">Harga</a></li>
                                 <li><a href="<?=site_url('contact')?>#" title="Kontak">Kontak</a></li>
                             </ul>
                         </div>

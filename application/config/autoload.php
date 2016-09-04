@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database','session', 'template','email','template_admin','pagination','ion_auth');
+$autoload['libraries'] = array('database','session', 'template','email','template_admin','template_single','pagination','ion_auth');
 
 /*
 | -------------------------------------------------------------------
@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url','date','tanggal_indonesia');
+$autoload['helper'] = array('url','date','tanggal_indonesia','text');
 
 /*
 | -------------------------------------------------------------------

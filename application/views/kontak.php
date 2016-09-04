@@ -125,7 +125,8 @@
                         </div>
 
                         <div class="widget-2 sidebarBox widget-container widget_recent_entries" id="recent-posts-2">
-                            <p>Aqiqah Sehati merupakan perusahaan layanan aqiqah terbesar di Indonesia dengan jangkauan layanan terluas hingga kota besar di Indonesia.<br /><br />Kini ibadah aqiqah Anda semakin mudah dan tidak ribet lagi bersama kami, silahkan hubungi kami kantor Aqiqah Sehati terdekat dikota Anda dibawah ini:<br />&nbsp;<br />KANTOR PUSAT<br />Telp. +62 82-2600-860-09<br />	Graha TI Lantai 1 Jl Ahmad Yani No 153 Surabaya.<br /><br />KANTOR CABANG<br />Sidoarjo<br />Telp. +62 82-3100-620-07<br />
+                            <h2>Siapa Kami ?</h2>
+                            <p>Aqiqah Sehati merupakan perusahaan yang mengutamakan pelayanan terbaik untuk para pelanggan<br /><br />Kini ibadah aqiqah Anda semakin mudah dan tidak ribet lagi bersama kami, silahkan hubungi kami kantor Aqiqah Sehati terdekat dikota Anda dibawah ini:<br />&nbsp;<br />KANTOR PUSAT<br />Telp. 0822-6008-6009<br />	Graha TI Lantai 1 Jl Ahmad Yani No 153 Surabaya. <a target="_blank" href="https://goo.gl/maps/ajguqyxmgWR2">Lokasi</a><br /><br />KANTOR CABANG<br />Sidoarjo<br />Telp. 0823-1006-2007<br />
                                 Perum Larangan Mega Asri D-33 Candi<br /></p>
                     </aside>
                 </div>

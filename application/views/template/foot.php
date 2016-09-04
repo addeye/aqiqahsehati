@@ -21,38 +21,28 @@
             <div class="span4 timeline-box">
                 <h5>Testimonial</h5>
                 <ul class="list-info scrollable">
+                    <?php foreach($foot_testimoni->result() as $row){?>
                     <li>
-                        <img src="<?=base_url('upload/testimonial/default.jpg')?>" alt="image" />
+                        <img src="<?=base_url('upload/testimonial/'.$row->gambar)?>" alt="testimoni aqiqah sehati - <?=$row->nama?>" />
                         <div class="testimonial">
-                            <span>Aqiqah Sehati " Sehati mmg layak jd pilihan</span>
+                            <span><?=$row->pesan?></span>
                             <h6 class="bottom">
-                                <small class="left">01 Agustus 2016</small>
+                                <small class="left"><?=tgl_indo($row->created_at)?></small>
                                 <span class="separator">|</span>
-                                <a href="#" class="testi-link">dr. Atiek TA</a>
+                                <a href="<?=site_url('testimonial#'.$row->gambar)?>" class="testi-link"><?=$row->nama?></a>
                             </h6>
                         </div>
                         <div class="clear"></div>
                     </li>
-                    <li>
-                        <img src="<?=base_url('upload/testimonial/default.jpg')?>" alt="image" />
-                        <div class="testimonial">
-                            <span>Semoga mendatangkan kemaslahatan untuk Ummat</span>
-                            <h6 class="bottom">
-                                <small class="left">27 Juli 2016</small>
-                                <span class="separator">|</span>
-                                <a href="#" class="testi-link">Ir. Yusuf Rohana - Aleg DPRD Jatim</a>
-                            </h6>
-                        </div>
-                        <div class="clear"></div>
-                    </li>
+                    <?php } ?>
                 </ul>
             </div>
             <!--column two ends-->
             <!--column three starts-->
             <div class="span4 timeline-box">
-                <h5>Alamat</h5>
-                <p>Graha TI Lantai 1<br>Jl Ahmad Yani No. 153<br>Surabaya</p>
-                <p>Phone/WA 0822-1006-2007</p>
+                <?php $address = $alamat->row();?>
+                <h5>Alamat Aqiqah Sehati</h5>
+                <?=$address->keterangan?>
                 <!--<a class="twitter-timeline" href="https://twitter.com/aqiqahnh" data-widget-id="697323422573957120">Tweet oleh @aqiqahnh</a>
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                 <<h5>Kicauan</h5>
@@ -115,12 +105,12 @@
                 <p> &copy; Copyright 2016 Deye | Aqiqah Sehati</p>
                 <!--copyright menu starts-->
                 <ul class="copyright-menu">
-                    <li><a href="<?=base_url('/')?>" class="menu home">Home</a></li>
-                    <li><a href="<?=base_url('home/page')?>" class="menu seputar-aqiqah">Seputar Aqiqah</a></li>
-                    <li><a href="#" class="menu harga">Harga</a></li>
-                    <li><a href="<?=base_url('home/kontak')?>" class="menu contact">Kontak</a></li>
-                    <li><a href="<?=base_url('home/galeri')?>" class="menu gallery">Galeri</a></li>
-                    <li><a href="#" class="menu testimonial">Testimonial</a></li>
+                    <li><a href="<?=base_url('/')?>" class="menu home">Beranda</a></li>
+                    <li><a href="<?=site_url('harga')?>" class="menu harga">Harga</a></li>
+                    <li><a href="<?=site_url('berita')?>" class="menu harga">Berita</a></li>
+                    <li><a href="<?=base_url('kontak')?>" class="menu contact">Kontak</a></li>
+                    <li><a href="<?=base_url('galeri')?>" class="menu gallery">Galeri</a></li>
+                    <li><a href="<?=site_url('testimonial')?>" class="menu testimonial">Testimonial</a></li>
                 </ul>
                 <!--copyright menu ends-->
             </div>

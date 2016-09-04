@@ -30,7 +30,7 @@
                 <ul class="treeview-menu">
                     <li><a href="<?=site_url('content/page')?>"><i class="fa fa-circle-o"></i> Profil</a></li>
                     <li><a href="<?=site_url('content/posting')?>"><i class="fa fa-circle-o"></i> Berita</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Galeri</a></li>
+                    <li><a href="<?=site_url('content/galeri')?>"><i class="fa fa-circle-o"></i> Galeri</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -42,7 +42,8 @@
                 <ul class="treeview-menu">
                     <li><a href="<?=site_url('fitur/order')?>"><i class="fa fa-circle-o"></i> Order</a></li>
                     <li><a href="<?=site_url('fitur/buku_tamu')?>"><i class="fa fa-circle-o"></i> Buku Tamu</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Testimoni</a></li>
+                    <li><a href="<?=site_url('fitur/testimoni')?>"><i class="fa fa-circle-o"></i> Testimoni</a></li>
+                    <li><a href="<?=site_url('fitur/upload')?>"><i class="fa fa-circle-o"></i> Upload Pengunjung</a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -65,6 +66,16 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="<?=site_url('front/kategori')?>"><i class="fa fa-circle-o"></i> Kategori</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-pie-chart"></i>
+                    <span>Laporan</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="<?=site_url('report')?>"><i class="fa fa-circle-o"></i> Rekap Order</a></li>
                 </ul>
             </li>
         </ul>

@@ -52,8 +52,8 @@
                                     </td>
                                     <td><?=tgl_indo($row->created_at)?></td>
                                     <td>
-                                        <a class="btn btn-success btn-xs" href="<?=site_url('content/edit_page/'.$row->id_posting)?>">Edit</a>
-                                        <a class="btn btn-danger btn-xs del" href="javascript:void(0);" id="<?=$row->id_posting?>">Del</a>
+                                        <a class="btn btn-success btn-xs" href="<?=site_url('content/edit_page/'.$row->id)?>">Edit</a>
+                                        <a class="btn btn-danger btn-xs del" href="javascript:void(0);" id="<?=$row->id?>">Del</a>
                                     </td>
                                 </tr>
                             <?php } ?>

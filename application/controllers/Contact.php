@@ -14,7 +14,12 @@ class Contact extends CI_Controller
         parent::__construct();
         $table = 'm_posting';
         $condition['tipe']='page';
-        $this->data['menu'] = $this->base_model->getData($table,$condition);
+        $this->data['menu'] = $this->base_model->getData($table,$condition,'ASC');
+        $this->data['link_social'] = $this->base_model->get('m_linksocial','ASC');
+        $this->data['foot_testimoni'] = $this->base_model->getData('m_testimoni',array('publish'=>1));
+        $this->data['alamat'] = $this->base_model->get('m_address');
+        $this->data['active'] = 'kontak';
+        $this->data['title'] = 'Kontak';
     }
 
     public function index()

@@ -11,20 +11,16 @@
             <!--logo ends-->
             <div class="span8 clearfix">
                 <!--social starts-->
-                <form action="#search" method="post" accept-charset="utf-8" id="search-head" onSubmit="return searchCheck();">						<ul class="social clearfix">
-                        <!--<li>
-                            <a href="ymsgr:sendim?nhcs1">
-                                <img id="yahooImg" src="http://opi.yahoo.com/online?u=rama_nurulhayat&amp;m=g&amp;t=1" title="Hubungi Kami dengan Yahoo! Messenger" alt="Hubungi Kami dengan Yahoo! Messenger" />
-                            </a>
-                            <a href="ymsgr:sendim?nhcs2">
-                                <img id="yahooImg" src="http://opi.yahoo.com/online?u=dhony_iyp&amp;m=g&amp;t=1" title="Hubungi Kami dengan Yahoo! Messenger" alt="Hubungi Kami dengan Yahoo! Messenger" />
-                            </a>
-                        </li>-->
+                <form action="<?=site_url('news/search')?>" method="post" accept-charset="utf-8" id="search-head" onSubmit="return searchCheck();">
+                    <ul class="social clearfix">
                         <li>
-                            <a href="https://www.facebook.com/Aqiqah-Sehati-936299933159726/" target="_blank"><img src="<?=base_url('assets/images/icons/social-icon-facebook.png')?>" width="28" height="28" alt="icon"></a>
-                            <a href="https://www.instagram.com/aqiqahsehati/" target="_blank"><img src="<?= base_url('assets/images/icons/social-icon-insta.png')?>" width="28" height="28" alt="icon"></a>
+                            <?php foreach($link_social->result() as $ls) { ?>
+                            <a href="<?=$ls->link?>" target="_blank"><img src="<?=base_url('assets/images/icons/'.$ls->icon.'.png')?>" width="28" height="28" alt="icon"></a>
+                            <?php } ?>
                             <input type="text" id="keyword" name="keyword" class="keyword-text" placeholder="Cari..." />
-                            <a id="search-button" class="search-button-action"><img src="<?= base_url('assets/images/icons/search_icon_aqiqah.png')?>" width="28" height="28" alt="icon"></a>
+                            <a href="javascript:void(0);" id="search-button" class="search-button-action">
+                                <img src="<?= base_url('assets/images/icons/search_icon_aqiqah.png')?>" width="28" height="28" alt="icon">
+                            </a>
                         </li>
                     </ul>
                 </form>						<!--social ends-->
@@ -34,38 +30,27 @@
                     <a href='order' class="menu_mobile" style="float: right; background: #ff720b; color: white; padding: 10px 30px; border-radius: 4px; font-size: 17px; font-family: 'Raleway', sans-serif; font-weight:400;">Order</a>
 
                     <ul>
-                        <li><a href="<?=site_url('/')?>" class="menu">Beranda</a></li>
+                        <li><a href="<?=site_url('/')?>" class="menu <?=$active=='beranda'?'active':''?> ">Beranda</a></li>
                         <li>
-                            <a href="#" class="menu">Tentang Sehati</a>
+                            <a class="menu <?=$active=='tentang'?'active':''?> ">Tentang Sehati</a>
                            <ul>
                                <?php foreach($menu->result() as $row){?>
                                 <li><a href="<?=site_url('page/'.$row->slug)?>"><?=$row->judul?></a></li>
                                <?php } ?>
+                               <li>
+                                   <a href="<?=site_url('kontak')?>" class="menu <?=$active=='kontak'?'active':''?>">Kontak</a>
+                               </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="<?=site_url('harga')?>" class="menu harga">Harga</a>
-                            <!-- Menu_mobile_hilang_hendrick <ul>
-                                <li><a href="http://aqiqahnurulhayat.com/jawa-timur">Jawa Timur</a></li>
-                                <li><a href="http://aqiqahnurulhayat.com/jabodetabek">JABODETABEK</a></li>
-                                <li><a href="http://aqiqahnurulhayat.com/balikpapan">Balikpapan</a></li>
-                                <li><a href="http://aqiqahnurulhayat.com/yogjakarta">Yogjakarta</a></li>
-                                <li><a href="http://aqiqahnurulhayat.com/jawa-tengah">Jawa Tengah</a></li>
-                                <li><a href="http://aqiqahnurulhayat.com/medan">Medan</a></li>
-                                <li><a href="http://aqiqahnurulhayat.com/bandung">Bandung</a></li>
-                            </ul>-->
+                            <a href="<?=site_url('harga-paket-aqiqah-murah')?>" class="menu <?=$active=='harga'?'active':''?>">Harga</a>
                         </li>
-                        <li><a href="<?=site_url('news')?>" class="menu news">Berita</a></li>
-                        <li>
-                            <a href="<?=site_url('contact')?>" class="menu kontak">Kontak</a>
-                            <ul>
-                                <!--<li><a href="http://aqiqahnurulhayat.com/order">Order</a></li>-->
-                            </ul>
-                        </li>
-                        <li><a href="<?=site_url('galeri')?>" class="menu gallery">Galeri</a></li>
+                        <li><a href="<?=site_url('berita')?>" class="menu <?=$active=='berita'?'active':''?>">Berita</a></li>
+                        <li><a href="<?=site_url('testimonial')?>" class="menu <?=$active=='testimonial'?'active':''?>">Testimoni</a></li>
+
+                        <li><a href="<?=site_url('galeri')?>" class="menu <?=$active=='galeri'?'active':''?>">Galeri</a></li>
 
                         <li class='menu_baru'><a href='<?=site_url('order')?>' style='background-color:#ff720b;color:white; border-radius:5px; font-weight:600; font-size:14px; padding:10px 20px;'>Order</a></li>
-                        <!--<li><a href="http://aqiqahnurulhayat.com/testimonial" class="menu testimonial">Testimonial</a></li>-->
 
                     </ul>
                 </div>

@@ -29,6 +29,7 @@
                                 <th>No</th>
                                 <th>Social</th>
                                 <th>Link</th>
+                                <th>Icon</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -38,6 +39,7 @@
                                     <td><?=$no++?></td>
                                     <td><?=$row->social?></td>
                                     <td><?=$row->link?></td>
+                                    <td><?=$row->icon?></td>
                                     <td>
                                         <a class="btn btn-success btn-xs" href="<?=site_url('front/edit_linksocial/'.$row->id)?>">Edit</a>
                                     </td>

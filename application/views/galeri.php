@@ -92,7 +92,7 @@
     <div class="container">
         <div class="row">
             <div class="span12">
-                <h4 class="heading-icon"> <img src="<?=base_url('assets/images/icons/heading-icon-blocks.png')?>" width="40" height="40" alt="icon" class="icon-small-bg"> Sehabat Sehati</h4>
+                <h4 class="heading-icon"> <img src="<?=base_url('assets/images/icons/heading-icon-blocks.png')?>" width="40" height="40" alt="icon" class="icon-small-bg"> Sahabat Sehati</h4>
             </div>
         </div>
     </div>
@@ -110,8 +110,9 @@
                 <div id="result" class="upload-result"></div>
                 <ul class="filter_nav">
                     <li class="active"><a href="#" class="all">All</a></li>
-                    <li><a href="#" class="serba-serbi">Serba-serbi</a></li>
-                    <li><a href="#" class="testimoni">Testimoni</a></li>
+                    <?php foreach($up_kategori->result() as $row){?>
+                    <li><a href="#" class="<?=$row->slug?>"><?=$row->kategori?></a></li>
+                    <?php } ?>
                 </ul>
                 <!--portfolio filter navigation ends-->
                 <!--3 column portfolio starts-->
@@ -121,38 +122,16 @@
                             <img src="<?=base_url('assets/images/upload.jpg')?>" class="gallery-upload" />
                         </div>
                     </li>
-                    <li data-id="id-130902143035875" data-type="serba-serbi">
+                    <?php foreach($galeri as $row){?>
+                    <li data-id="id-130902143035875" data-type="<?=$row->kategori->slug?>">
                         <div class="folio-thumb">
-                            <img src="<?=base_url('upload/gallery/testimoni.jpg')?>" alt="Hj. Neno Warisman" />
-                            <a href="<?=base_url('upload/gallery/testimoni.jpg')?>" data-rel="prettyPhoto[gallery]" title="Hj. Neno Warisman" class="icon-zoom"></a>
+                            <img src="<?=base_url('upload/gallery/'.$row->gambar)?>" alt="<?=$row->judul?>" />
+                            <a href="<?=base_url('upload/gallery/'.$row->gambar)?>" data-rel="prettyPhoto[gallery]" title="<?=$row->judul?>" class="icon-zoom"></a>
                         </div>
-                        <h5>dr. Atiek TA - Puskesmas Gayungan</h5>
-                        <p class="blackscroll"> Aqiqah Sehati " Sehati mmg layak jd pilihan"</p>
+                        <h5><?=$row->judul?></h5>
+                        <div class="blackscroll"><?=$row->keterangan?></div>
                     </li>
-                    <li data-id="id-140630210617628" data-type="testimoni">
-                        <div class="folio-thumb">
-                            <img src="<?=base_url('upload/gallery/testimoni.jpg')?>" alt="Ahmad Fuadi "Negeri 5 Menara"" />
-                            <a href="<?=base_url('upload/gallery/testimoni.jpg')?>" data-rel="prettyPhoto[gallery]" title="Ahmad Fuadi "Negeri 5 Menara"" class="icon-zoom"></a>
-                        </div>
-                        <h5>Agung Wijayanto "Kantor Pajak Madya Surabaya"</h5>
-                        <p class="blackscroll">"Alhamdulillah enak & pas banget." </p>
-                    </li>
-                    <li data-id="id-140630210617628" data-type="testimoni">
-                        <div class="folio-thumb">
-                            <img src="<?=base_url('upload/gallery/testimoni.jpg')?>" alt="Ahmad Fuadi "Negeri 5 Menara"" />
-                            <a href="<?=base_url('upload/gallery/testimoni.jpg')?>" data-rel="prettyPhoto[gallery]" title="Ahmad Fuadi "Negeri 5 Menara"" class="icon-zoom"></a>
-                        </div>
-                        <h5>Ir. Yusuf Rohana - Aleg DPRD Jatim</h5>
-                        <p class="blackscroll">Semoga mendatangkan kemaslahatan untuk Ummat </p>
-                    </li>
-                    <li data-id="id-140630210617628" data-type="testimoni">
-                        <div class="folio-thumb">
-                            <img src="<?=base_url('upload/gallery/testimoni.jpg')?>" alt="Ahmad Fuadi "Negeri 5 Menara"" />
-                            <a href="<?=base_url('upload/gallery/testimoni.jpg')?>" data-rel="prettyPhoto[gallery]" title="Ahmad Fuadi "Negeri 5 Menara"" class="icon-zoom"></a>
-                        </div>
-                        <h5>M.Aziz - Direktur PT. TERAFULK Megantara Design</h5>
-                        <p class="blackscroll">SUbhaanallah.....betul2 sedapnya sampai ke hati </p>
-                    </li>
+                    <?php } ?>
                 </ul>
                 <!--3 column portfolio ends-->
             </div>

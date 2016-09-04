@@ -14,7 +14,8 @@
 
         $('.datepicker').datepicker({ changeMonth: true,
             changeYear: true,
-            yearRange: "1950:2020"});
+            yearRange: "1950:2020",
+            dateFormat: 'yy-mm-dd'});
         $('.js-select2').select2();
     });
 
@@ -109,7 +110,7 @@
                 <div class="clearfix"></div>
                 <div id="result"></div>
 
-                <form action="<?=site_url('home/act_order')?>" method="post" accept-charset="utf-8">
+                <form action="<?=site_url('order/send')?>" method="post" accept-charset="utf-8">
                     <fieldset>
                         <p style="border-bottom:1px solid #e2e2e2;"><strong>Data Pemesanan</strong></p>
                         <p>
@@ -128,12 +129,18 @@
                         <br>
                         <p>
                             <label>Kecamatan :</label>
-                            <select id="kec" name="kec" class="js-select2">
+                            <select id="kec" name="kec" class="js-select2" disabled>
                                 <option value="">Pilih Kecamatan</option>
                             </select>
                         </p>
                         <br>
-
+                        <p>
+                            <label>Kelurahan :</label>
+                            <select id="kel" name="kel" class="js-select2" disabled>
+                                <option value="">Pilih Kelurahan</option>
+                            </select>
+                        </p>
+                        <br>
                         <p>
                             <label>Alamat :</label>
                             <textarea  rows="4" name="address" id="address" class="required" required></textarea>
@@ -185,14 +192,11 @@
                         <div class="clear"></div>
 
                         <p style="margin-top:10px;border-bottom:1px solid #e2e2e2;"><strong>Pelaksanaan Ibadah Aqiqoh</strong></p>
-
                         <p>
-                            <label>Hari :</label>
-                            <input name="shipping_day" class="required" type="text" required/>
-                        </p>
-                        <p>
-                            <label>Tanggal :</label>
-                            <input name="shipping_date" class="required datepicker" type="text" readonly="readonly" style="cursor:default;" required/>
+                            <label>Hari/Tanggal :</label>
+                            <input style="width: 30% !important; background-color: #eee !important;" name="help-text-day" id="help-text-day" type="text" placeholder="Isi Tanggal" disabled/>
+                            <input style="width: 30% !important;" name="shipping_date" id="pesan_tgl" class="required datepicker" type="text" placeholder="Tanggal" required/>
+                            <input name="shipping_day" id="pesan_hari" class="required" type="hidden"/>
                         </p>
                         <p>
                             <label>Jam :</label>
@@ -214,11 +218,12 @@
                         <p>
                             <label>Tipe Aqiqoh :</label>
               <span class="detail-form">
-
+                  <span>
+                  <label><a href="<?=site_url('harga-paket-aqiqah-murah')?>" target="_blank">Lihat Detail Paket</a>
+                </span>
                 <span>
                   <label>Sedap 4 :</label><input name="sedap_4" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
                 </span>
-
                 <span>
                   <label>Sedap 3 :</label><input name="sedap_3" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
                 </span>
@@ -237,103 +242,6 @@
 
               </span>
                         </p>
-
-                        <p class="clear"></p>
-
-
-
-
-                        <!--p>
-                          <label>Paket Aqiqoh :</label>
-                          <select name="paket" class="required">
-                            <option value="">-pilih paket aqiqoh-</option>
-                            <option value="mentah siap masak">Mentah Siap Masak</option>
-                            <option value="masak siap saji">Masak Siap Saji</option>
-                            <option value="masak paket nasi kotak">Masak Paket Nasi Kotak</option>
-                          </select>
-                        </p-->
-
-                        <!--selipan tabel mulai-->
-                        <!--label>Tabel Tipe Aqiqah :</label-->
-                        <!--span class="detail-form">
-                      <!--p>
-          <!--table border="2" bordercolor="f2f2f2" align="left" cellpadding="10">
-              <tr>
-                <td width="125" bgcolor="#b7b7b7" align="center">Type</td>
-                <td width="87" bgcolor="#c5c5c5" align="center">Sete dalam tusuk</td>
-                <td width="98" bgcolor="#b7b7b7"align="center">Gulai dalam porsi cup</td>
-              </tr>
-              <tr>
-                <td width="125" bgcolor="#d4d4d4">Platinum</td>
-                <td width="87" align="center" bgcolor="#e4e4e4">550</td>
-                <td width="98" align="center" bgcolor="#d4d4d4">180</td>
-              </tr>
-              <tr>
-                <td width="125" bgcolor="#d4d4d4">Istimewa</td>
-                <td width="87" align="center" bgcolor="#e4e4e4">450</td>
-                <td width="98" align="center" bgcolor="#d4d4d4">140</td>
-              </tr>
-              <tr>
-                <td width="125" bgcolor="#d4d4d4">Super</td>
-                <td width="87" align="center" bgcolor="#e4e4e4">300</td>
-                <td width="98" align="center" bgcolor="#d4d4d4">100</td>
-              </tr>
-              <tr>
-                <td width="125" bgcolor="#d4d4d4">Puas</td>
-                <td width="87" align="center" bgcolor="#e4e4e4">250</td>
-                <td width="98" align="center" bgcolor="#d4d4d4">80</td>
-              </tr>
-              <tr>
-                <td width="125" bgcolor="#d4d4d4">Tasyakuran</td>
-                <td width="87" align="center" bgcolor="#e4e4e4">150</td>
-                <td width="98" align="center" bgcolor="#d4d4d4">40</td>
-              </tr>
-          </table-->
-                        </p-->
-                        </span-->
-                        <div class="clearfix"></div>
-                        <!--selipan tabel selesai-->
-
-                        <!--p>
-                          <!--label>Olahan Aqiqoh :</label-->
-                        <!--span class="detail-form"-->
-
-                        <!--span>
-                          <label>Sate (tusuk) :</label><input name="sate" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
-                        </span-->
-
-                        <!--span>
-                          <label>Gule (panci) :</label><input name="gule" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
-                        </span-->
-
-                        <!--span>
-                          <label>Tongseng :</label><input name="tongseng" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
-                        </span-->
-
-                        <!--span>
-                          <label>kambing Guling :</label><input name="kambing_guling" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
-                        </span-->
-
-                        <!--span>
-                          <label>Kikil :</label><input name="kikil" type="text" class="number" value="0" /><!-- <label>Ekor</label> -->
-                        </span-->
-
-                        <!--span>
-                          <label>Olahan Lain :</label><input name="other" type="text" style="width:50% !important;" />
-                        </span-->
-
-                        <!--span>
-                          <label>Kepala :</label><input name="kepala" type="text" style="width:50% !important;" />
-                        </span-->
-
-                        <!--span>
-                          <!--label>Kaki :</label--><!--input name="kaki" type="text" style="width:50% !important;" /-->
-                        </span-->
-
-                        </span-->
-                        </p-->
-
-
 
                         <p class="clear"></p>
 
@@ -377,7 +285,7 @@
 </section>
 
 <input type="hidden" id="urlkec" value="<?=site_url('order/getkec')?>">
-<input type="hidden" id="urlkec" value="<?=site_url('order/getkel')?>">
+<input type="hidden" id="urlkel" value="<?=site_url('order/getkel')?>">
 
 <script>
     $('#kota').change(function(){
@@ -388,28 +296,46 @@
         $.ajax({
             url : url+'/'+id,
             type: 'get',
-            cache: false,
+            cache: true,
         })
             .success(function(response){
                 /*optional stuff to do after success */
+                $('#kec').removeAttr('disabled');
                 $('#kec').html(response);
             });
     });
 
     $('#kec').change(function(){
         var id = this.value;
-        var url = $('#urlkec').val();
+        var url = $('#urlkel').val();
         console.log(id);
 
         $.ajax({
             url : url+'/'+id,
             type: 'get',
-            cache: false,
+            cache: true,
         })
             .success(function(response){
                 /*optional stuff to do after success */
-                $('#kec').html(response);
+                $('#kel').removeAttr('disabled');
+                $('#kel').html(response);
             });
+    });
+
+
+    var days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'];
+    //var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    //var month = months[ now.getMonth() ];
+
+    //console.log(day);
+
+    $('#pesan_tgl').change(function()
+    {
+        var pesan_tgl = $('#pesan_tgl').val();
+        var now = new Date(pesan_tgl);
+        var day = days[ now.getDay() ];
+        $('#pesan_hari').val(day);
+        $('#help-text-day').val(day);
     });
 
 </script>

@@ -12,6 +12,7 @@ class Fitur extends CI_Controller
     {
         parent::__construct();
         $this->load->library('ion_auth');
+        $this->load->helper('download');
 
         if (!$this->ion_auth->logged_in()) {
             redirect('auth/login');
@@ -248,5 +249,113 @@ class Fitur extends CI_Controller
         $condition['id'] = $id;
         $this->base_model->deleteData($table,$condition);
         $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-success\" id=\"alert\">Data Berhasil Dihapus !!</div></div>");
+    }
+
+    public function testimoni()
+    {
+        $data['title'] = 'Testimoni';
+        $data['sub_title'] = 'Tabel Testimoni';
+        $data['testimoni'] = $this->base_model->get('m_testimoni');
+        $content = "admin/testimoni/view_testimoni";
+        $this->template_admin->output($data, $content);
+    }
+
+    public function detail_testimoni($id)
+    {
+        $data['title'] = 'Testimoni';
+        $data['sub_title'] = 'Lihat Testimoni';
+        $table = 'm_testimoni';
+        $condition['id']=$id;
+        $data['testimoni'] = $this->base_model->getData($table,$condition);
+        $content = "admin/testimoni/detail_testimoni";
+        $this->template_admin->output($data, $content);
+    }
+
+    public function update_testimoni()
+    {
+        $publish = $this->input->post('publish');
+        $id = $this->input->post('id');
+
+        $table = 'm_testimoni';
+        $condition['id'] = $id;
+        $data['publish'] = $publish;
+
+        $this->base_model->updateData($table,$data,$condition);
+        $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-success\" id=\"alert\">Testimoni berhasil diupdate</div></div>");
+        redirect('fitur/testimoni');
+    }
+
+    public function delete_testimoni($id)
+    {
+        $table = 'm_testimoni';
+        $condition['id'] = $id;
+
+        //cari file data lama yang akan dihapus
+        $temp_data = $this->base_model->getData($table,$condition);
+        $temp_data = $temp_data->row();
+        $path = 'upload/testimonial/'.$temp_data->gambar;
+
+        if(file_exists($path) and $temp_data->gambar!='')
+        {
+            $this->load->helper("file");
+            unlink($path);
+        }
+
+        $this->base_model->deleteData($table,$condition);
+        $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-success\" id=\"alert\">Data Berhasil Dihapus !!</div></div>");
+
+    }
+
+    public function upload()
+    {
+        $data['title'] = 'Upload';
+        $data['sub_title'] = 'Tabel Upload';
+        $data['upload'] = $this->base_model->get('m_upload')->result();
+        foreach($data['upload'] as $key => $up)
+        {
+            $data['upload'][$key]->kategori = $this->base_model->getData('m_kategori',array('id'=>$up->kategori))->result();
+        }
+        $content = "admin/upload/view_upload";
+        $this->template_admin->output($data, $content);
+    }
+
+    public function detail_upload($id)
+    {
+        $data['title'] = 'Upload';
+        $data['sub_title'] = 'Lihat Upload';
+        $table = 'm_upload';
+        $condition['id']=$id;
+        $data['upload'] = $this->base_model->getData($table,$condition);
+        $content = "admin/upload/detail_upload";
+        $this->template_admin->output($data, $content);
+    }
+
+    public function delete_upload($id)
+    {
+        $table = 'm_upload';
+        $condition['id'] = $id;
+
+        //cari file data lama yang akan dihapus
+        $temp_data = $this->base_model->getData($table,$condition);
+        $temp_data = $temp_data->row();
+        $path = 'upload/request/'.$temp_data->gambar;
+
+        if(file_exists($path) and $temp_data->gambar!='')
+        {
+            $this->load->helper("file");
+            unlink($path);
+        }
+
+        $this->base_model->deleteData($table,$condition);
+        $this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-success\" id=\"alert\">Data Berhasil Dihapus !!</div></div>");
+
+    }
+
+    public function download($id)
+    {
+        $data = $this->base_model->getData('m_upload',array('id'=>$id))->row();
+//        return var_dump($data->gambar);
+        $nama = 'upload/request/'.$data->gambar;
+        force_download($nama,NULL);
     }
 }

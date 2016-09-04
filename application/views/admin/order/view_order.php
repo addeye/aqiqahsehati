@@ -27,10 +27,11 @@
                         <div class="pull-right"><a href="<?=site_url('fitur/tambah_order')?>" class="btn btn-primary">Tambah</a></div>
                     </div><!-- /.box-header -->
                     <div class="box-body">
-                        <table id="example2" class="table table-bordered table-hover">
+                        <table id="example1" class="table table-bordered table-hover">
                             <thead>
                             <tr>
                                 <th>No</th>
+                                <th>No Order</th>
                                 <th>Nama</th>
                                 <th>Email</th>
                                 <th>Action</th>
@@ -40,6 +41,7 @@
                             <?php $no=1; foreach($order->result() as $row) {?>
                                 <tr>
                                     <td><?=$no++?></td>
+                                    <td><?=$row->id?></td>
                                     <td><?=$row->nama?></td>
                                     <td><?=$row->email?></td>
                                     <td>

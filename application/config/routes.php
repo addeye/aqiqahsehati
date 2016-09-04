@@ -54,4 +54,9 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['page/(:any)'] = 'page/index/$1';
-$route['harga'] = 'home/harga';
+$route['harga-paket-aqiqah-murah'] = 'home/harga';
+$route['kontak'] = 'contact';
+$route['berita/(:any)'] = 'news/view/$1';
+$route['berita'] = 'news';
+$route['berita/kategori/(:any)'] = 'news/kategori/$1';
+$route['berita/page/(:any)'] = 'news/index/$1';

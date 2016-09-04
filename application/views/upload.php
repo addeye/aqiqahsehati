@@ -54,7 +54,7 @@
         $(function() {
 
             $("input.file").filestyle({
-                image: "http://aqiqahnurulhayat.com/admin/assets/images/forms/upload_file.gif",
+                image: "<?=base_url('assets/images/upload_file.gif')?>",
                 imageheight : 29,
                 imagewidth : 78,
                 width : 300
@@ -122,7 +122,7 @@
         <div class="row">
             <div class="span12">
                 <h4 class="heading-icon">
-                    <img src="http://aqiqahnurulhayat.com/assets/images/icons/heading-icon-mail.png" width="40" height="40" alt="icon" class="icon-small-bg">
+                    <img src="<?=base_url('assets/images/icons/heading-icon-mail.png')?>" width="40" height="40" alt="icon" class="icon-small-bg">
                     Upload Foto
                 </h4>
             </div>
@@ -140,60 +140,61 @@
             <!--main content starts-->
             <div class="main-content span12">
                 <div class="inner-content">
-                    <form action="#" method="post" accept-charset="utf-8" id="uploadform">
+                    <form action="<?=site_url('galeri/send')?>" method="post" accept-charset="utf-8" id="uploadform">
                         <fieldset>
                             <div class="clearfix"></div>
-                            <div id="result"></div>
                             <p>
                                 <label>Foto :</label>
-                                <input type="file" name="image" class="file" id="image-upload" />
+                                <input type="file" name="gambar" class="file" id="image-upload" />
+                                <p>Maksimum besar file 2MB format (jpg,png,jpeg)</p>
                             </p>
                             <p class="clear"></p>
                             <p>
                                 <label>Nama :</label>
-                                <input type="text" class="required" name="uploader" />
+                                <input type="text" class="required" name="nama_uploader" />
                             </p>
-                            <p>
+                            <!-- <p>
                                 <label>Nomor Pemesanan :</label>
-                                <input type="text" class="required" name="order_id" />
-                            </p>
+                                <input type="text" class="required" name="nomor_order" />
+                            </p> -->
                             <p>
                                 <label>Email :</label>
                                 <input type="text" class="required email" name="email" />
                             </p>
                             <p>
                                 <label>Telepon :</label>
-                                <input type="text" class="required number" name="phone" />
+                                <input type="text" class="required number" name="telp" />
                             </p>
                             <p>
                                 <label>Judul :</label>
-                                <input type="text" class="required" name="name" />
+                                <input type="text" class="required" name="judul" />
                             </p>
                             <p>
                                 <label>Kategori:</label>
                             <div>
                                 <ul class="list-box">
-                                    <li>
-                                        <input type="checkbox" name="category[160610040410439]" value="160610040410439" id="160610040410439"  />
-                                        <label for="160610040410439" class="list-item">Serba-serbi</label>
+                                    <?php foreach($kategori->result() as $row) {?>
+                                    <li class="checkbox">
+                                        <label style="cursor: pointer;">
+                                        <input type="radio" name="kategori" value="<?=$row->id?>"/>
+                                        <?=$row->kategori?></label>
                                     </li>
-                                    <li>
-                                        <input type="checkbox" name="category[160610040743047]" value="160610040743047" id="160610040743047"  />
-                                        <label for="160610040743047" class="list-item">Testimoni</label>
-                                    </li>
+                                    <?php } ?>
                                 </ul>
                             </div>
                             </p>
                             <p>
                                 <label>Deskripsi :</label>
-                                <textarea  rows="4" name="description" id="description" class="" maxlength="100"></textarea>
+                                <textarea  rows="4" name="keterangan" id="description" class="" maxlength="100"></textarea>
                             </p>
                             <p>
                                 <input type="submit" value="Upload" class="submit" id="contact-button" />
                                 <input type="button" class="preloader" id="contact-loader" />
                             </p>
+                            <div id="result"></div>
                         </fieldset>
-                    </form>                </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

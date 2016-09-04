@@ -14,7 +14,11 @@ class Page extends CI_Controller
         parent::__construct();
         $table = 'm_posting';
         $condition['tipe']='page';
-        $this->data['menu'] = $this->base_model->getData($table,$condition);
+        $this->data['menu'] = $this->base_model->getData($table,$condition,'ASC');
+        $this->data['link_social'] = $this->base_model->get('m_linksocial','ASC');
+        $this->data['foot_testimoni'] = $this->base_model->getData('m_testimoni',array('publish'=>1));
+        $this->data['alamat'] = $this->base_model->get('m_address');
+        $this->data['active'] = 'tentang';
     }
 
     public function index($slug)
@@ -22,14 +26,15 @@ class Page extends CI_Controller
         $table = 'm_posting';
         $condition['slug'] = $slug;
         $condition['tipe'] = 'page';
-        $this->data['konten'] = $this->base_model->getData($table,$condition);
+        $this->data['title'] = 'Halaman Tentang Sehati';
+        $this->data['posting'] = $this->base_model->getData($table,$condition)->result();
 
-        if(!$this->data['konten']->num_rows())
+        if(!count($this->data['posting']))
         {
             show_404();
         }
 
         $content = "page";
-        $this->template->output($this->data,$content);
+        $this->template_single->output($this->data,$content);
     }
 }

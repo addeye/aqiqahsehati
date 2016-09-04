@@ -61,8 +61,9 @@
                                     </td>
                                     <td><?=tgl_indo($row->created_at)?></td>
                                     <td>
-                                        <a class="btn btn-success btn-xs" href="<?=site_url('content/edit_posting/'.$row->id_posting)?>">Edit</a>
-                                        <a class="btn btn-danger btn-xs del" href="javascript:void(0);" id="<?=$row->id_posting?>">Del</a>
+                                        <a class="btn btn-success btn-xs" href="<?=site_url('content/edit_posting/'.$row->id)?>">Edit</a>
+                                        <a class="btn btn-danger btn-xs del" href="javascript:void(0);" id="<?=$row->id?>">Del</a>
+                                        <a href="<?=site_url('content/komentar/'.$row->id)?>" class="btn btn-info btn-xs" data-toggle="tooltip" data-placement="top" title="Komentar <?=count($row->komentar)?>" ><?=count($row->komentar)?></a>
                                     </td>
                                 </tr>
                             <?php } ?>

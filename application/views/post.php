@@ -121,7 +121,7 @@
                             <h4 class="widget-title">Berita sehati terkini</h4>
                             <ul>
                                 <?php foreach($popnews->result() as $pop){?>
-                                    <li><a href="<?=site_url('news/view/'.$pop->slug)?>" title=""><?=$pop->judul?></a></li>
+                                    <li><a href="<?=site_url('berita/'.$pop->slug)?>" title=""><?=$pop->judul?></a></li>
                                 <?php } ?>
                             </ul>
                         </div>
@@ -129,7 +129,9 @@
                         <div class="widget-3 sidebarBox widget-container widget_categories" id="categories-2">
                             <h4 class="widget-title">Kategori</h4>
                             <ul>
-                                <li class="cat-item cat-item-160610040410439"><a href="#" title="Serba-serbi">Serba-serbi</a></li>
+                                <?php foreach($side_kategori->result() as $row){?>
+                                    <li class="cat-item cat-item-160610040410439"><a href="<?=site_url('berita/kategori/'.$row->slug)?>" title="Serba-serbi"><?=$row->kategori?></a></li>
+                                <?php } ?>
                             </ul>
                         </div>
 
@@ -161,7 +163,7 @@
                 <div class="berita">
                     <article id="post-160715073443709" class="post-160715073443709 post type-post status-publish format-standard hentry category-design tag-design tag-development tag-tutorials clearfix" role="article">
                         <div class="entry-body">
-                            <?php $data = $posting->row();?>
+                            <?php $data = $posting[0];?>
                             <header>
                                 <h3 class="permalink">
                                     <a href="#" rel="bookmark" title=""><?=$data->judul?></a>
@@ -187,7 +189,7 @@
 
                             <div class="inner-content">
                                 <p style="text-align: justify;">
-                                    <img class=" " src="<?=base_url('upload/posting/'.$data->gambar)?>" alt="" width="588" height="588" />
+                                    <img class=" " src="<?=base_url('upload/posting/'.$data->gambar)?>" alt="image" width="588" height="588" />
                                 </p>
                                 <?=$data->konten?>
                             </div>
@@ -256,23 +258,38 @@
                     ##################### COMMENT POST ###########################
                     ##############################################################
                     -->
-                    <h3 id="comments"><span>0</span> Comments</h3>
-                    <nav id="comment-nav">
-                        <ul>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </nav>
+                    <h3 id="comments"><span><?=count($data->komentar)?></span> Comments</h3>
                     <ol class="commentlist">
+                        <?php foreach($data->komentar as $row) {?>
+                        <li class="comment byuser comment-author-<?=$row->nama?> bypostauthor odd alt thread-odd thread-alt depth-1">
+                            <article id="<?=$row->id?>" class="clearfix">
+                                <header class="comment-author vcard">
 
+                                    <img alt='' src="<?=base_url('upload/testimonial/default.jpg')?>" class="avatar avatar-40 photo" height="40px" width="40px" />
+
+                                    <div class="authormeta">
+                                        <h3 class="comment-author">
+                                            <cite class="fn"><?=$row->nama?></cite>
+                                        </h3>
+
+                                          <span class="datetime">
+                                            <time datetime="<?=tgl_indo($row->created_at)?>">
+                                                <a href="#<?=$row->id?>"><?=tgl_indo($row->created_at)?></a>
+                                            </time>
+                                          </span>
+
+                                    </div>
+                                </header>
+
+                                <div class="comment-text">
+                                    <p><?=$row->pesan?></p>
+                                </div>
+                            </article>
+                        </li>
+                        <?php } ?>
                     </ol>
-                    <nav id="comment-nav">
-                        <ul>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </nav>
                     <div id="comment-respond-wrapper">
+                        <?=$this->session->flashdata('pesan')?>
                         <section id="respond" class="respond-form">
                             <h3 id="comment-form-title" class="h2">Leave a Comment</h3>
                             <div id="cancel-comment-reply">
@@ -281,29 +298,30 @@
                                 </p>
                             </div>
                             <!--form-->
-                            <form action="#" method="post" accept-charset="utf-8" id="contactform">                <input type="hidden" id="comment-parent" name="parent" value="" />
+                            <form action="<?=site_url('news/comment')?>" method="post" accept-charset="utf-8">
+                                <input type="hidden" name="posting" value="<?=$data->id?>"/>
+                                <input type="hidden" name="slug" value="<?=$data->slug?>"/>
                                 <fieldset>
                                     <div class="clearfix"></div>
                                     <div id="result"></div>
                                     <p>
                                         <label>Nama :</label>
-                                        <input name="name" class="required" type="text">
+                                        <input name="nama" class="required" type="text" required>
                                     </p>
                                     <p>
                                         <label>Email Address :</label>
-                                        <input name="email"  class="required email" type="text">
+                                        <input name="email"  class="required email" type="email" required>
                                     </p>
                                     <p>
                                         <label>Website :</label>
-                                        <input name="url"  class="" type="text">
+                                        <input name="url" class="" type="text">
                                     </p>
                                     <p>
                                         <label>Message :</label>
-                                        <textarea  rows="4" name="message" id="message" class="required"></textarea>
+                                        <textarea  rows="4" name="pesan" required></textarea>
                                     </p>
                                     <p>
                                         <input type="submit" value="Send Message" class="submit"/>
-                                        <input type="button" class="preloader" id="comment-loader" />
                                     </p>
                                 </fieldset>
                             </form>              <!--form-->
