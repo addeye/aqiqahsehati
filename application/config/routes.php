@@ -59,4 +59,5 @@ $route['kontak'] = 'contact';
 $route['berita/(:any)'] = 'news/view/$1';
 $route['berita'] = 'news';
 $route['berita/kategori/(:any)'] = 'news/kategori/$1';
-$route['berita/page/(:any)'] = 'news/index/$1';
+$route['halaman/berita/(:any)'] = 'news/index/$1';
+$route['halaman/berita'] = 'news';

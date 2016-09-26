@@ -33,7 +33,7 @@ class News extends CI_Controller
         $jml = $this->news_model->getAll();
 
         //pengaturan pagination
-        $config['base_url'] = base_url().'berita/page';
+        $config['base_url'] = base_url().'halaman/berita/';
         $config['total_rows'] = $jml->num_rows();
         $config['per_page'] = "5";
         $config["uri_segment"] = 3;
